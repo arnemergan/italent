@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='home-banner'>
+        <div class='container'>
+            <div class='home-banner-content'>
+                <h1>KSA Droeshout</h1>
+            </div>
+        </div>
+    </div>
+    <div class='home-info'>
+        <div class='container-fluid'>
+            <div class='row'>
+                <div class='col col-lg-4 col-md-4 col-sm-12'>
+                    <h3>Inschrijving Klein kamp</h3>
+                    <h5>18 april - 28 april 2019</h5>
+                    <p>In dendermonde</p>
+                    <form action="http://127.0.0.1/italent/inschrijven.php">
+                        <button>Schrijf je lid in</button>
+                    </form>
+                </div>
+                <div class='col col-lg-4 col-md-4 col-sm-12'>
+                    <h3>Inschrijving kamp</h3>
+                    <h5>18 juli - 28 juli 2019</h5>
+                    <p></p>
+                    <button>Schrijf je lid in</button>
+                </div>
+                <div class='col col-lg-4 col-md-4 col-sm-12'>
+                    <h3>Inschrijving jaar</h3>
+                    <h5>2018 - 2019</h5>
+                    <p></p>
+                    <button>Schrijf je lid in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container-fluid p-5'>
+        <div class='row'>
+            <div class='col-lg-12'>
+                <div class='home-news'>
+                    <div class='home-news-head'>
+                        <h2><span>Nieuws</span></h2>
+                    </div>
+                    <div class='home-news-content'>
+                        <div class="card-columns row">
+                            <div class='home-news-card card  col-lg-4 col-md-6 col-sm-12'>
+                                <div class='card-body'>
+                                    <h5>Gepubliceerd op 15/12/2018</h5>
+                                    <p>
+                                    Deze zondag gaan we het Opwijkse centrum onveilig maken!
+                                    We spreken met alle groepen af aan de middelbare school VKO (Karenveldstraat) om 14 uur...
+                                    </p>
+                                    <button class='news-item-lees-meer'>Lees meer <i class='fa fa-angle-right'></i></button>
+                                </div>
+                            </div> 
+                                                        <div class='home-news-card card  col-lg-4 col-md-6 col-sm-12'>
+                                <div class='card-body'>
+                                    <h5>Gepubliceerd op 15/12/2018</h5>
+                                    <p>
+                                    Deze zondag gaan we het Opwijkse centrum onveilig maken!
+                                    We spreken met alle groepen af aan de middelbare school VKO (Karenveldstraat) om 14 uur...
+                                    </p>
+                                    <button class='news-item-lees-meer'>Lees meer <i class='fa fa-angle-right'></i></button>
+                                </div>
+                            </div> 
+                                                        <div class='home-news-card card  col-lg-4 col-md-6 col-sm-12'>
+                                <div class='card-body'>
+                                    <h5>Gepubliceerd op 15/12/2018</h5>
+                                    <p>
+                                    Deze zondag gaan we het Opwijkse centrum onveilig maken!
+                                    We spreken met alle groepen af aan de middelbare school VKO (Karenveldstraat) om 14 uur...
+                                    </p>
+                                    <button class='news-item-lees-meer'>Lees meer <i class='fa fa-angle-right'></i></button>
+                                </div>
+                            </div> 
+                                                        <div class='home-news-card card  col-lg-4 col-md-6 col-sm-12'>
+                                <div class='card-body'>
+                                    <h5>Gepubliceerd op 15/12/2018</h5>
+                                    <p>
+                                    Deze zondag gaan we het Opwijkse centrum onveilig maken!
+                                    We spreken met alle groepen af aan de middelbare school VKO (Karenveldstraat) om 14 uur...
+                                    </p>
+                                    <button class='news-item-lees-meer'>Lees meer <i class='fa fa-angle-right'></i></button>
+                                </div>
+                            </div> 
+                                                        <div class='home-news-card card  col-lg-4 col-md-6 col-sm-12'>
+                                <div class='card-body'>
+                                    <h5>Gepubliceerd op 15/12/2018</h5>
+                                    <p>
+                                    Deze zondag gaan we het Opwijkse centrum onveilig maken!
+                                    We spreken met alle groepen af aan de middelbare school VKO (Karenveldstraat) om 14 uur...
+                                    </p>
+                                    <button class='news-item-lees-meer'>Lees meer <i class='fa fa-angle-right'></i></button>
+                                </div>
+                            </div> 
+                                                        <div class='home-news-card card  col-lg-4 col-md-6 col-sm-12'>
+                                <div class='card-body'>
+                                    <h5>Gepubliceerd op 15/12/2018</h5>
+                                    <p>
+                                    Deze zondag gaan we het Opwijkse centrum onveilig maken!
+                                    We spreken met alle groepen af aan de middelbare school VKO (Karenveldstraat) om 14 uur...
+                                    </p>
+                                    <button class='news-item-lees-meer'>Lees meer <i class='fa fa-angle-right'></i></button>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class='home-news-link'>
+                        <form action="nieuws.php">
+                            <button>Meer nieuws <i class='fa fa-angle-right'></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-12'>
+                <div class='home-agenda'>
+                    <div class='home-agenda-head'>
+                        <h2><span>agenda</span></h2>
+                    </div>
+                    <div class='home-agenda-content'>
+                        <div class="card-columns row">
+                            {% for item in agenda_items_list %}
+                            <div class='home-agenda-card card col-lg-3 col-md-4 col-sm-12'>
+                                    <div class='card-body'>
+                                        {% if item.datumvan|date:"d F Y" == item.datumtot|date:"d F Y" %}
+                                        <h5>{{ item.datumvan|date:"d F Y"}}</h5>
+                                        {% else %}
+                                        <h5>{{ item.datumvan|date:"d "}} - {{ item.datumtot|date:"d F Y"}}</h5>
+                                        {% endif %}
+                                        <h4>{{ item.titel }}</h4>
+                                        <form action="/agenda/{{item.id}}">
+                                            <button class='agenda-item-meer-info'>meer info</button>
+                                        </form>
+                                    </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class='home-agenda-link'>
+                            <form action="/agenda">
+                                <button>Agenda <i class='fa fa-angle-right'></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

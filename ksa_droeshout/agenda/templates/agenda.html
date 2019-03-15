@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+ <div class='banner'>
+        <div class='container'>
+            <div class='banner-content'>
+                <h1>Agenda</h1>
+            </div>
+        </div>
+</div>
+<div class='agenda-content'>
+    <div class='container-fluid p-5'>
+        <div class='row'>
+            <div class='col-lg-12'>
+                <div class='agenda-menu pb-1'>
+                    <div class='row'>
+                    <a href='#' class='btn btn-light col-lg-2 col-md-4 col-sm-12'>Vandaag</a>
+                    <a href="{'% url 'agenda/' %}?{'{ prev_month }}" class='btn btn-light col-lg-2 col-md-4 col-sm-12'>vorige</a>
+                    <a href="{'% url 'agenda/' %}?{'{ next_month }}" class='btn btn-light col-lg-2 col-md-4 col-sm-12'>volgende</a>
+                    <a href='#' class='btn btn-light col-lg-2 col-md-4 col-sm-12'>print</a>
+                    <a href='#' class='btn btn-light col-lg-2 col-md-4 col-sm-12'>download</a>
+                    <select name='agenda-select' class='btn btn-light col-lg-2 col-md-4 col-sm-12'>
+                        <option value="A">Agenda</option>
+                        <option value="D">Dag</option>
+                        <option value="W">Week</option>
+                        <option value="M">Maand</option>
+                        <option value="J">Jaar</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class='col-lg-12'>
+           <table class='calendar'>
+            {{ calendar }}
+            </table>
+            </div>
+            <div class='col-lg-12'>
+                {% for i in i|rjust:12 %}
+                <div class='home-agenda'>
+                    <div class='home-agenda-head'>
+                        <h2><span>{{ forloop.counter }}</span></h2>
+                    </div>
+                    <div class='home-agenda-content'>
+                        <div class="card-columns row">
+                            {% for item in agenda_items_list %}
+                            <div class='home-agenda-card card col-lg-3 col-md-4 col-sm-12'>
+                                    <div class='card-body'>
+                                        {% if item.datumvan|date:"d F Y" == item.datumtot|date:"d F Y" %}
+                                        <h5>{{ item.datumvan|date:"d F Y"}}</h5>
+                                        {% else %}
+                                        <h5>{{ item.datumvan|date:"d "}} - {{ item.datumtot|date:"d F Y"}}</h5>
+                                        {% endif %}
+                                        <h4>{{ item.titel }}</h4>
+                                        <form action="/agenda/{{item.id}}/">
+                                            <button class='agenda-item-meer-info'>meer info</button>
+                                        </form>
+                                    </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>    
+    </div>
+    </div>
+</div>
+{% endblock %}
