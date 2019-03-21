@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class='agenda-item-content'>
+    <div class='container p-4'>
+        <div class='row'>
+            <div class='col-lg-8 col-md-8 col-sm-12'>
+                <h4>{{ agendaitem.titel }}</h4>
+                <p>{{ agendaitem.beschrijving }}</p>
+                <div class='item-links'>
+                    <h5>Voor meer informatie</h5>
+                    <a href="item.php">Ga naar website</a>
+                    <a href="item.php">Ga naar website</a>
+                    <a href="item.php">Download brief</a>
+                </div>
+                <div class='item-social-links'>
+                    <h5>Volg ons op sociale media</h5>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            <div class='col-lg-4 col-md-4 col-sm-12'>
+                <div class='item-info-content card'>
+                    <div class='card-body'>
+                    <h2>Details</h2>
+                        {% if agendaitem.datumvan|date:"d F Y" == agendaitem.datumtot|date:"d F Y" %}
+                            <div class='agenda-item-info van'>
+                                <span>Van</span>{{ agendaitem.datumvan|date:"H:m" }}
+                            </div>
+                            <div class='agenda-item-info tot'>
+                                <span>Tot</span>{{ agendaitem.datumtot|date:"H:m" }}
+                            </div>
+                        {% else %}
+                            <div class='agenda-item-info van'>
+                                <span>Van</span>{{ agendaitem.datumvan|date:"d F Y, H:m" }}
+                            </div>
+                            <div class='agenda-item-info tot'>
+                                <span>Tot</span>{{ agendaitem.datumtot|date:"d F Y, H:m" }}
+                            </div>
+                        {% endif %}
+                        <div class='agenda-item-info locatie'>
+                            <span>Locatie</span>{{ agendaitem.locatie }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

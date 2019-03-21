@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class='banner'>
+        <div class='container'>
+            <div class='banner-content'>
+                <h1>Inschrijvingen</h1>
+            </div>
+        </div>
+    </div>
+    <div class='home-info'>
+        <div class='container-fluid'>
+            <div class='row'>
+                {% for item in inschrijven_list %}
+                <div class='col col-lg-4 col-md-4 col-sm-12'>
+                    <h3>{{ item.soort }}</h3>
+                    {% if item.startdatum|date:"d F Y" == item.einddatum|date:"d F Y" %}
+                        <h4>{{ item.startdatum|date:"d F Y" }}</h4>
+                    {% else %}
+                        <h4>{{ item.startdatum|date:"d "}} - {{ item.einddatum|date:"d F Y"}}</h4>
+                    {% endif %}
+                    <form action="inschrijven/{{item.id}}/">
+                        <button>Meer info</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
