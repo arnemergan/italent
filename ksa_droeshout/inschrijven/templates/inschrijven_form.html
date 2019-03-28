@@ -1,0 +1,8 @@
+{% extends "inschrijven_info.html" %}
+{% block form %}
+<form method="post" action="/inschrijven">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="Schrijf je lid in">
+</form>
+{% endblock %}

@@ -7,32 +7,6 @@
             </div>
         </div>
     </div>
-    <div class='home-info'>
-        <div class='container-fluid'>
-            <div class='row'>
-                <div class='col col-lg-4 col-md-4 col-sm-12'>
-                    <h3>Inschrijving Klein kamp</h3>
-                    <h5>18 april - 28 april 2019</h5>
-                    <p>In dendermonde</p>
-                    <form action="http://127.0.0.1/italent/inschrijven.php">
-                        <button>Schrijf je lid in</button>
-                    </form>
-                </div>
-                <div class='col col-lg-4 col-md-4 col-sm-12'>
-                    <h3>Inschrijving kamp</h3>
-                    <h5>18 juli - 28 juli 2019</h5>
-                    <p></p>
-                    <button>Schrijf je lid in</button>
-                </div>
-                <div class='col col-lg-4 col-md-4 col-sm-12'>
-                    <h3>Inschrijving jaar</h3>
-                    <h5>2018 - 2019</h5>
-                    <p></p>
-                    <button>Schrijf je lid in</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class='container-fluid p-5'>
         <div class='row'>
             <div class='col-lg-12'>
@@ -106,7 +80,7 @@
                     </div>
                     <div class='home-news-link'>
                         <form action="nieuws.php">
-                            <button>Meer nieuws <i class='fa fa-angle-right'></i></button>
+                            <button class="btn">Meer nieuws <i class='fa fa-angle-right'></i></button>
                         </form>
                     </div>
                 </div>
@@ -130,7 +104,7 @@
                                         {% endif %}
                                         <h4>{{ item.titel }}</h4>
                                         <form action="/agenda/{{item.id}}">
-                                            <button class='agenda-item-meer-info'>meer info</button>
+                                            <button class='agenda-item-meer-info btn'>meer info</button>
                                         </form>
                                     </div>
                             </div>
@@ -138,7 +112,7 @@
                         </div>
                         <div class='home-agenda-link'>
                             <form action="/agenda">
-                                <button>Agenda <i class='fa fa-angle-right'></i></button>
+                                <button class="btn">Agenda <i class='fa fa-angle-right'></i></button>
                             </form>
                         </div>
                     </div>

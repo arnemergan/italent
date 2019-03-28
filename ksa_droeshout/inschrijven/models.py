@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -10,11 +11,13 @@ class Lid(models.Model):
     geslacht = models.CharField(max_length=1,choices=geslachten)
 
 class Inschrijving(models.Model):
-    soorten = (('k','klein kamp'),('K','kamp'),('Y','jaar'),('m','medium kamp'),('d','daguitstap'))
+    soorten = (('klein kamp','k'),('kamp','K'),('jaar','Y'),('medium kamp','m'),('daguitstap','d'))
     soort = models.CharField(max_length=20,choices=soorten)
     beschrijving = models.TextField(max_length=200)
     startdatum = models.DateTimeField()
     einddatum = models.DateTimeField()
     prijs = models.DecimalField(decimal_places=2,max_digits=4)
     locatie = models.CharField(max_length=100)
+    actief = models.BooleanField()
+
 

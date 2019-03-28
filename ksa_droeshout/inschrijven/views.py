@@ -1,6 +1,6 @@
-from django.shortcuts import render
 from django.views import generic
-from .models import Inschrijving
+from .forms import FormLid
+from .models import Inschrijving,Lid
 
 # Create your views here.
 class InschrijvenView(generic.ListView):
@@ -8,8 +8,17 @@ class InschrijvenView(generic.ListView):
     context_object_name = 'inschrijven_list'
 
     def get_queryset(self):
-        return Inschrijving.objects.all()
+        return Inschrijving.objects.filter(actief=True)
 
 class InschrijvenDetailView(generic.DetailView):
-    template_name = 'inschrijven_info.html'
+    template_name ='inschrijven_info.html'
     model = Inschrijving
+    def get_context_data(self, **kwargs):
+        context = super(InschrijvenDetailView, self).get_context_data(**kwargs)
+        context['form'] = FormLid
+        return context
+
+class InschrijvenForm(generic.FormView):
+    template_name = 'inschrijven_form.html'
+    form_class = FormLid
+    success_url = '/inschrijven'

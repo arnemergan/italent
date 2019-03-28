@@ -1,15 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class='banner'>
+        <div class='container'>
+            <div class='banner-content'>
+                <h1>{{ inschrijving.soort }}</h1>
+                {% if inschrijving.startdatum|date:"d F Y" == inschrijving.einddatum|date:"d F Y" %}
+                    <h4>{{ inschrijving.startdatum|date:"d F Y" }}</h4>
+                {% else %}
+                    <h4>{{ inschrijving.startdatum|date:"d "}} - {{ inschrijving.einddatum|date:"d F Y"}}</h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
     <div class='agenda-item-content'>
     <div class='container p-4'>
         <div class='row'>
             <div class='col-lg-8 col-md-8 col-sm-12'>
-                <h4>{{ agendaitem.titel }}</h4>
-                <p>{{ agendaitem.beschrijving }}</p>
+                <h4>{{ inschrijving.soort }}</h4>
+                <p>{{ inschrijving.beschrijving }}</p>
+                {% block form %}
+
+                {% endblock %}
+                <div class='inschrijven-link'>
+                        <form action="/inschrijven/">
+                            <button class="btn">Schrijf je lid in <i class='fa fa-angle-right'></i></button>
+                        </form>
+                </div>
                 <div class='item-links'>
                     <h5>Voor meer informatie</h5>
-                    <a href="item.php">Ga naar website</a>
-                    <a href="item.php">Ga naar website</a>
                     <a href="item.php">Download brief</a>
                 </div>
                 <div class='item-social-links'>
@@ -22,26 +40,34 @@
                 <div class='item-info-content card'>
                     <div class='card-body'>
                     <h2>Details</h2>
-                        {% if agendaitem.datumvan|date:"d F Y" == agendaitem.datumtot|date:"d F Y" %}
+                        {% if inschrijving.startdatum|date:"d F Y" == inschrijving.einddatum|date:"d F Y" %}
                             <div class='agenda-item-info van'>
-                                <span>Van</span>{{ agendaitem.datumvan|date:"H:m" }}
+                                <span>Van</span>{{ inschrijving.startdatum|date:"H:m" }}
                             </div>
                             <div class='agenda-item-info tot'>
-                                <span>Tot</span>{{ agendaitem.datumtot|date:"H:m" }}
+                                <span>Tot</span>{{ inschrijving.einddatum|date:"H:m" }}
                             </div>
                         {% else %}
                             <div class='agenda-item-info van'>
-                                <span>Van</span>{{ agendaitem.datumvan|date:"d F Y, H:m" }}
+                                <span>Van</span>{{ inschrijving.startdatum|date:"d F Y, H:m" }}
                             </div>
                             <div class='agenda-item-info tot'>
-                                <span>Tot</span>{{ agendaitem.datumtot|date:"d F Y, H:m" }}
+                                <span>Tot</span>{{ inschrijving.einddatum|date:"d F Y, H:m" }}
                             </div>
                         {% endif %}
                         <div class='agenda-item-info locatie'>
-                            <span>Locatie</span>{{ agendaitem.locatie }}
+                            <span>Locatie</span>{{ inschrijving.locatie }}
                         </div>
+                        <div class='agenda-item-info prijs'><span>Prijs</span>€ {{ inschrijving.prijs }}</div>
                     </div>
                 </div>
+            </div>
+            <div class='col col-lg-12'>
+                    <div class='home-agenda-link'>
+                            <form action="/inschrijven/">
+                                <button>Meer inschrijvingen <i class='fa fa-angle-right'></i></button>
+                            </form>
+                        </div>
             </div>
         </div>
     </div>
