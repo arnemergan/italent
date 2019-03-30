@@ -301,6 +301,7 @@ box-sizing: border-box;
 /* item pages*/
 .item-links{
     margin: 10px 0;
+    clear: both;
 }
 .item-links a{
     display: flex;
@@ -324,7 +325,8 @@ box-sizing: border-box;
 }
 /* inschrijven */
 .inschrijven-link button{
-    margin: 0 auto;
+    float: right;
+    margin: 10px auto;
     text-align: center;
     border: none;
     background-color: #0168b3;

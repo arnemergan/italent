@@ -13,6 +13,7 @@ class InschrijvenView(generic.ListView):
 class InschrijvenDetailView(generic.DetailView):
     template_name ='inschrijven_info.html'
     model = Inschrijving
+
     def get_context_data(self, **kwargs):
         context = super(InschrijvenDetailView, self).get_context_data(**kwargs)
         context['form'] = FormLid

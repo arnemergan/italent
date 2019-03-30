@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e883bebf-bab1-4d12-aae3-7c258b0a8597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/inschrijven/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/templates/agenda.html" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/templates/agenda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/templates/agenda_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/templates/agenda_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inschrijven/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inschrijven/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijven.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_daguitstap.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijven_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijven_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_jaar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_kamp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_klein_kamp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_medium_kamp.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inschrijven/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ksa_droeshout/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ksa_droeshout/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,12 +17,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html">
+        <entry file="file://$PROJECT_DIR$/inschrijven/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="47" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="47" />
+            <state relative-caret-position="544">
+              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inschrijven/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -52,34 +43,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inschrijven/forms.py">
+        <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ksa_droeshout/urls.py">
+        <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_form.html">
+        <entry file="file://$PROJECT_DIR$/inschrijven/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+            <state relative-caret-position="187">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,6 +88,7 @@
       <find>butto</find>
       <find>angle</find>
       <find>home-in</find>
+      <find>inschrijven</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,18 +99,18 @@
       <list>
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/agenda/views.py" />
-        <option value="$PROJECT_DIR$/static/main.css" />
         <option value="$PROJECT_DIR$/inschrijven/templates/inschrijven.html" />
         <option value="$PROJECT_DIR$/agenda/templates/agenda.html" />
         <option value="$PROJECT_DIR$/agenda/templates/agenda_item.html" />
         <option value="$PROJECT_DIR$/agenda/templates/index.html" />
         <option value="$PROJECT_DIR$/inschrijven/templates/inschrijven_form_jaar.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html" />
-        <option value="$PROJECT_DIR$/inschrijven/forms.py" />
-        <option value="$PROJECT_DIR$/inschrijven/models.py" />
         <option value="$PROJECT_DIR$/ksa_droeshout/urls.py" />
+        <option value="$PROJECT_DIR$/inschrijven/models.py" />
         <option value="$PROJECT_DIR$/inschrijven/views.py" />
+        <option value="$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html" />
+        <option value="$PROJECT_DIR$/static/main.css" />
         <option value="$PROJECT_DIR$/inschrijven/templates/inschrijven_form.html" />
+        <option value="$PROJECT_DIR$/inschrijven/forms.py" />
       </list>
     </option>
   </component>
@@ -147,18 +136,7 @@
             <path>
               <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
               <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="inschrijven" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="inschrijven" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,16 +202,18 @@
       <workItem from="1553191252361" duration="598000" />
       <workItem from="1553334888385" duration="2570000" />
       <workItem from="1553794792066" duration="8762000" />
+      <workItem from="1553876382687" duration="1365000" />
+      <workItem from="1553884466698" duration="1575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11946000" />
+    <option name="totallyTimeSpent" value="14886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2590604" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26644295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -321,13 +301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="243" column="23" lean-forward="true" selection-start-line="243" selection-start-column="23" selection-end-line="243" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -335,26 +308,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_form_jaar">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_form_jaar" />
     <entry file="file://$PROJECT_DIR$/ksa_droeshout/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -365,30 +319,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/forms.py">
+    <entry file="file://$PROJECT_DIR$/agenda/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        <state relative-caret-position="544">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/views.py">
+    <entry file="file://$PROJECT_DIR$/static/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="362">
+          <caret line="303" column="4" selection-start-line="303" selection-start-column="4" selection-end-line="303" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

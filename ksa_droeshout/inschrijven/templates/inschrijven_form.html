@@ -1,8 +1,10 @@
 {% extends "inschrijven_info.html" %}
 {% block form %}
-<form method="post" action="/inschrijven">
+<form method="post" action="/inschrijven/add/">
 {% csrf_token %}
 {{ form }}
-<input type="submit" value="Schrijf je lid in">
+    <div class='inschrijven-link'>
+            <button class="btn">Schrijf je lid in <i class='fa fa-angle-right'></i></button>
+    </div>
 </form>
 {% endblock %}
