@@ -1,0 +1,26 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.container-login{
+  height: 100vh;
+  background: #e9faff;
+}
+.login-link button{
+  color:#fff;
+  background-color: #2b2b2b;
+  width: 100%;
+}
+.login-link button:hover{
+  color:#fff;
+  background-color: #4d4d4d;
+}
+.card{
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+.card-header{
+  text-align: center;
+}
+

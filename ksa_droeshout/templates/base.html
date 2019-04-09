@@ -1,6 +1,7 @@
 {% load static %}
 <html lang="nl">
     <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'main.css' %}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -10,6 +11,7 @@
         <meta name="author" content="Arne Mergan" />
         <meta name="copyright" content="Arne Mergan" />
         <meta name="robots" content="follow"/>
+{{ form.media }}
     </head>
     <body>
         <div class='header'>
@@ -47,9 +49,10 @@
                     meer
                   </a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">begeleiding</a>
-                    <a class="dropdown-item" href="#">groepen</a>
-                    <a class="dropdown-item" href="http://127.0.0.1/italent/overons.php">over ons</a>
+                        <a class="dropdown-item" href="#">begeleiding</a>
+                        <a class="dropdown-item" href="#">groepen</a>
+                        <a class="dropdown-item" href="#">over ons</a>
+                        <a class="dropdown-item" href="{% url 'dash' %}">dashboard</a>
                   </div>
                 </li>
                 </ul>

@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'agenda',
     'inschrijven',
     'index',
+    'dashboard',
+    'datetimewidget',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +120,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+#redirect after login
+LOGIN_REDIRECT_URL = '/dashboard'
+
+#redirect after logout
+LOGOUT_REDIRECT_URL = '/auth/login'
+
+LOGIN_URL = 'login'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -124,3 +135,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
+EMAIL_HOST = 'send.one.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'leiding@ksadroeshout.be'
+EMAIL_HOST_PASSWORD = 'X4^@@V#rt#SW3RSEuVf0uef0ih$@h%s^DA#aY@m*0UCKdtZ5V8'
+EMAIL_USE_TLS = True

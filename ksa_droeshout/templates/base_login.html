@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta charset="utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="ksa,ksa droeshout, droeshout"/>
+    <meta name="author" content="Arne Mergan" />
+    <meta name="copyright" content="Arne Mergan" />
+    <meta name="robots" content="follow"/>
+</head>
+<body>
+
+	<div class="container-login">
+        {% block content %}
+
+        {% endblock %}
+	</div>
+</body>
+</html>
