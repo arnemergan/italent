@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from dashboard.models import Groep
 from django.urls import reverse
 
 # Create your models here.
@@ -36,7 +37,7 @@ class Lid(models.Model):
     actief = models.BooleanField(default=True)
 
     #groep waar lid in zit
-    #groepid = models.ForeignKey(Groep,models.CASCADE)
+    groepid = models.ForeignKey(Groep,models.CASCADE)
 
 
 class Inschrijving(models.Model):
