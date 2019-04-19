@@ -1,5 +1,5 @@
 from django.views import generic
-
+from django.contrib.messages.views import SuccessMessageMixin
 from agenda.forms import FormAgendaItem
 from .models import AgendaItem
 from django_tables2 import SingleTableView
@@ -16,19 +16,22 @@ class AgendaItemDetailView(generic.DetailView):
     template_name = 'agenda_item.html'
     model = AgendaItem
 
-class AgendaItemCreateView(generic.CreateView):
+class AgendaItemCreateView(SuccessMessageMixin,generic.CreateView):
     model = AgendaItem
     form_class = FormAgendaItem
     success_url = '/agenda/list'
+    success_message = 'agenda item succesvol gecreëerd'
 
-class AgendaItemUpdateView(generic.UpdateView):
+class AgendaItemUpdateView(SuccessMessageMixin,generic.UpdateView):
     model = AgendaItem
     form_class = FormAgendaItem
     success_url = '/agenda/list'
+    success_message = 'agenda item succesvol geupdated'
 
-class AgendaItemDeleteView(generic.DeleteView):
+class AgendaItemDeleteView(SuccessMessageMixin,generic.DeleteView):
     model = AgendaItem
     success_url = '/agenda/list'
+    success_message = 'agenda item succesvol gedeleted'
 
 class AgendaItemView(SingleTableView):
     template_name = 'agenda_list.html'

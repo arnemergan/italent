@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
     <div class='banner'>
         <div class='container'>
             <div class='banner-content'>
-                <h1>{{ inschrijving.soort }}</h1>
-                {% if inschrijving.startdatum|date:"d F Y" == inschrijving.einddatum|date:"d F Y" %}
-                    <h4>{{ inschrijving.startdatum|date:"d F Y" }}</h4>
-                {% else %}
-                    <h4>{{ inschrijving.startdatum|date:"d "}} - {{ inschrijving.einddatum|date:"d F Y"}}</h4>
-                {% endif %}
+                <h1>{{ inschrijving.agendaitemid.titel }}</h1>
+                    {% if inschrijving.agendaitemid.datumvan|date:"d F Y" == inschrijving.agendaitemid.datumtot|date:"d F Y" %}
+                        <h4>{{ inschrijving.agendaitemid.datumvan|date:"d F Y" }}</h4>
+                    {% else %}
+                        <h4>{{ inschrijving.agendaitemid.datumvan|date:"d "}} - {{ inschrijving.agendaitemid.datumtot|date:"d F Y"}}</h4>
+                    {% endif %}
             </div>
         </div>
     </div>
@@ -16,14 +17,32 @@
     <div class='container p-4'>
         <div class='row'>
             <div class='col-lg-8 col-md-8 col-sm-12'>
-                <h4>{{ inschrijving.soort }}</h4>
-                <p>{{ inschrijving.beschrijving }}</p>
-                {% block form %}
-
-                {% endblock %}
+                <h4>{{ inschrijving.agendaitemid.titel }}</h4>
+                <p>{{ inschrijving.agendaitemid.beschrijving }}</p>
+                <div class="card">
+                    <div class="card-header">Schrijf je lid in</div>
+                    <div class="card-body">
+                        {% if search|length == 0 %}
+                            <div class="alert alert-danger">Geen lid gevonden met die naam, probeer nog eens, let op de lengte van voor en achternaam moeten minstens 2 letters lang zijn, indien je nog niet bent ingeschreven voor dit ksa jaar gelieve op onderstaande knop te duwen</div>
+                            <a href="{% url 'inschrijven_nieuw' %}" class="btn btn-outline-info">Schrijf je nieuw lid in</a>
+                        {% endif %}
+                        {% for item in search %}
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <input type="text" name="lid_id" value="{{ item.uuid }}" hidden>
+                                    <input type="text" name="inschrijving_id" value="{{ inschrijving.id }}" hidden>
+                                    <button type="submit" class="btn btn-primary">Schrijf je lid {{ item.voornaam }}  {{ item.achternaam }} in</button>
+                                </form>
+                        {% endfor %}
+                        <form method="get">
+                            {{ form | crispy}}
+                            <button class="btn btn-outline-primary">Zoek je lid</button>
+                        </form>
+                    </div>
+                </div>
                 <div class='item-links'>
                     <h5>Voor meer informatie</h5>
-                    <a href="item.php">Download brief</a>
+                    <a href="/media/{{ inschrijving.brief }}">Download brief</a>
                 </div>
                 <div class='item-social-links'>
                     <h5>Volg ons op sociale media</h5>
@@ -35,23 +54,23 @@
                 <div class='item-info-content card'>
                     <div class='card-body'>
                     <h2>Details</h2>
-                        {% if inschrijving.startdatum|date:"d F Y" == inschrijving.einddatum|date:"d F Y" %}
+                        {% if inschrijving.agendaitemid.datumvan|date:"d F Y" == inschrijving.agendaitemid.datumtot|date:"d F Y" %}
                             <div class='agenda-item-info van'>
-                                <span>Van</span>{{ inschrijving.startdatum|date:"H:m" }}
+                                <span>Van</span>{{ inschrijving.agendaitemid.datumvan|date:"H:m" }}
                             </div>
                             <div class='agenda-item-info tot'>
-                                <span>Tot</span>{{ inschrijving.einddatum|date:"H:m" }}
+                                <span>Tot</span>{{ inschrijving.agendaitemid.datumtot|date:"H:m" }}
                             </div>
                         {% else %}
                             <div class='agenda-item-info van'>
-                                <span>Van</span>{{ inschrijving.startdatum|date:"d F Y, H:m" }}
+                                <span>Van</span>{{ inschrijving.agendaitemid.datumvan|date:"d F Y, H:m" }}
                             </div>
                             <div class='agenda-item-info tot'>
-                                <span>Tot</span>{{ inschrijving.einddatum|date:"d F Y, H:m" }}
+                                <span>Tot</span>{{ inschrijving.agendaitemid.datumtot|date:"d F Y, H:m" }}
                             </div>
                         {% endif %}
                         <div class='agenda-item-info locatie'>
-                            <span>Locatie</span>{{ inschrijving.locatie }}
+                            <span>Locatie</span>{{ inschrijving.agendaitemid.adres }}
                         </div>
                         <div class='agenda-item-info prijs'><span>Prijs</span>€ {{ inschrijving.prijs }}</div>
                     </div>

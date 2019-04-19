@@ -7,11 +7,19 @@
         <div class="col-lg-12">
             <div class="card">
                   <div class="card-header">
-                    <form method="post">
-                    {% csrf_token %}
-                    {{ form| crispy }}
-                        <button class="btn btn-outline-primary">Save</button>
-                        <a href="{% url 'agenda_item_list' %}" class="btn btn-secondary">Terug</a>
+                      <form method="post" class="float-right w-100">
+                      <div class="float-right">
+                            <button class="btn btn-outline-primary">Save</button>
+                            <a href="{% url 'agenda_item_list' %}" class="btn btn-secondary">Terug</a>
+                      </div>
+                          <div class="float-right w-100">
+                            {% csrf_token %}
+                            {{ form| crispy }}
+                          </div>
+                        <div class="float-right">
+                            <button class="btn btn-outline-primary">Save</button>
+                            <a href="{% url 'agenda_item_list' %}" class="btn btn-secondary">Terug</a>
+                        </div>
                     </form>
                   </div>
             </div>

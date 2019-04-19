@@ -5,8 +5,12 @@ from inschrijven import views as inschrijven_views
 from dashboard import views as daschboard_views
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+from django.views.static import serve
+from django.contrib.auth.models import User
 
 urlpatterns = [
+    path('media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
     path('admin/', admin.site.urls),
 
     #agenda
@@ -15,16 +19,20 @@ urlpatterns = [
     path('agenda/<int:pk>/',agenda_views.AgendaItemDetailView.as_view(),name='agenda_item'),
 
     path('agenda/item/add/',login_required(agenda_views.AgendaItemCreateView.as_view()),name='agenda_item_add'),
-    #path('/agenda/item/add/done/'),
     path('agenda/item/<int:pk>/update/',login_required(agenda_views.AgendaItemUpdateView.as_view()),name='agenda_item_update'),
-    #path('/agenda/item/<int:pk>/update/done/'),
     path('agenda/item/<int:pk>/delete/',login_required(agenda_views.AgendaItemDeleteView.as_view()),name='agenda_item_delete'),
-    #path('/agenda/item/delete/done/'),
     path('agenda/list/',login_required(agenda_views.AgendaItemView.as_view()),name="agenda_item_list"),
 
     #inschrijven
     path('inschrijven/',inschrijven_views.InschrijvenView.as_view(),name='inschrijven'),
     path('inschrijven/<int:pk>/',inschrijven_views.InschrijvenDetailView.as_view(),name='inschrijven_info'),
+    path('inschrijven/lid/<int:pk>/',inschrijven_views.InschrijvenLidView.as_view(),name='inschrijven_lid'),
+    path('inschrijven/nieuw/',inschrijven_views.InschrijveNieuwView.as_view(),name='inschrijven_nieuw'),
+
+    path('inschrijven/item/add/',login_required(inschrijven_views.InschrijvenCreateView.as_view()),name='inschrijving_add'),
+    path('inschrijven/item/<int:pk>/update/',login_required(inschrijven_views.InschrijvenUpdateView.as_view()),name='inschrijving_update'),
+    path('inschrijven/item/<int:pk>/delete/',login_required(inschrijven_views.InschrijvenDeleteView.as_view()),name='inschrijving_delete'),
+    path('inschrijven/list/',login_required(inschrijven_views.InschrijvingAllView.as_view()),name='inschrijving_all'),
 
     #auth
     path('auth/login/',auth_views.LoginView.as_view(),name="login"),

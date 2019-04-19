@@ -10,18 +10,26 @@
     <div class='home-info'>
         <div class='container-fluid'>
             <div class='row'>
+                <div class='card col-lg-4 col-md-6 col-sm-12 inschrijven-link'>
+                    <div class="card-body">
+                        <h3>Nieuw lid</h3>
+                        <form action="{% url 'inschrijven_nieuw'%}">
+                            <button class="btn float-none">Schrijf je lid in <i class="fa fa-angle-right"></i></button>
+                        </form>
+                    </div>
+                </div>
                 {% for item in inschrijven_list %}
                 <div class='card col-lg-4 col-md-6 col-sm-12 inschrijven-link'>
                     <div class="card-body">
-                    <h3>{{ item.soort }}</h3>
-                    {% if item.startdatum|date:"d F Y" == item.einddatum|date:"d F Y" %}
-                        <h4>{{ item.startdatum|date:"d F Y" }}</h4>
+                    <h3>{{ item.agendaitemid.titel }}</h3>
+                    {% if item.agendaitemid.datumvan|date:"d F Y" == item.agendaitemid.datumtot|date:"d F Y" %}
+                        <h4>{{ item.agendaitemid.datumvan|date:"d F Y" }}</h4>
                     {% else %}
-                        <h4>{{ item.startdatum|date:"d "}} - {{ item.einddatum|date:"d F Y"}}</h4>
+                        <h4>{{ item.agendaitemid.datumvan|date:"d "}} - {{ item.agendaitemid.datumtot|date:"d F Y"}}</h4>
                     {% endif %}
-                    <form action="/inschrijven/{{item.id}}/">
-                        <button class="btn">Schrijf je lid in <i class="fa fa-angle-right"></i></button>
-                    </form>
+                            <form action="{% url 'inschrijven_info' item.id %}">
+                                <button class="btn float-none">Schrijf je lid in <i class="fa fa-angle-right"></i></button>
+                            </form>
                     </div>
                 </div>
                 {% endfor %}

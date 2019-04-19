@@ -1,12 +1,34 @@
 from django import forms
-from .models import Lid
+from .models import Lid,Inschrijving,InschrijvingLid
+from bootstrap_datepicker_plus import DateTimePickerInput
 
-class FormLid(forms.ModelForm):
+
+class FormSearch(forms.Form):
+    voornaam = forms.CharField()
+    achternaam = forms.CharField()
+
+class FormLidNieuw(forms.ModelForm):
     class Meta:
         model = Lid
-        fields = ['voornaam','achternaam','geboortedatum','geslacht']
+        fields = ['voornaam','achternaam','geboortedatum','geslacht','groep']
         widgets = {
-            'voornaam': forms.TextInput(attrs={'class': 'form-control'}),
-            'achternaam': forms.TextInput(attrs={'class': 'form-control'}),
-            'geboortedatum': forms.SelectDateWidget(attrs={'class','form-control'})
+            'geboortedatum': DateTimePickerInput(format='%d-%m-%Y')
         }
+
+class FormInschrijving(forms.ModelForm):
+    class Meta:
+        model = Inschrijving
+        fields = ['agendaitemid','prijs','brief','actief']
+        labels = {
+            'agendaitemid':'titel'
+        }
+
+class FormLidInschrijven(forms.ModelForm):
+    class Meta:
+        model = InschrijvingLid
+        fields = ['inschrijvingid','lidid']
+
+
+
+
+
