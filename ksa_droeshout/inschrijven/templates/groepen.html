@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class='banner'>
+        <div class='container'>
+            <div class='banner-content'>
+                <h1>Groepen</h1>
+            </div>
+        </div>
+    </div>
+    <div class='home-info'>
+        <div class='container'>
+            {% for groep in groep_list %}
+                <div class="row p-5">
+                    <div class="col-lg-12">
+                        <h3>{{ groep.naam }}</h3>
+                    </div>
+                    <div class="col-lg-12">
+                        <p>{{ groep.beschrijving }}</p>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6">
+                                <img class="img-fluid rounded" src="{{ groep.groepfoto.url }}"/>
+                            </div>
+                            <div class="col-lg-3"></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

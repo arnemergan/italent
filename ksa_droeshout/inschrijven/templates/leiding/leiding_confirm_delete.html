@@ -1,0 +1,22 @@
+{% extends "base_dashboard.html" %}
+{% block title %}Leiding{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                  <div class="card-header">
+                    <form method="post">
+                    {% csrf_token %}
+                    <div class='inschrijven-link'>
+                        <h2>Weet u zeker dat u dit item wilt verwijderen?</h2>
+                        <button class="btn btn-outline-danger">Verwijderen</button>
+                        <a href="{% url 'dash_leiding' %}" class="btn btn-info">Annuleer</a>
+                    </div>
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

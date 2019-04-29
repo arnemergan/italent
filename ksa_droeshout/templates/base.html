@@ -36,7 +36,7 @@
                     <a class="nav-link" href="http://127.0.0.1/italent/nieuws.php">nieuws</a>
                   </li>
                   <li class="nav-item pl-3">
-                    <a class="nav-link" href="#">verhuur</a>
+                    <a class="nav-link" href="/verhuur">verhuur</a>
                   </li> 
                 <li class="nav-item pl-3">
                     <a class="nav-link" href="#">contact</a>
@@ -50,8 +50,8 @@
                     meer
                   </a>
                   <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">begeleiding</a>
-                        <a class="dropdown-item" href="#">groepen</a>
+                        <a class="dropdown-item" href="/begeleiding">begeleiding</a>
+                        <a class="dropdown-item" href="/groepen">groepen</a>
                         <a class="dropdown-item" href="#">over ons</a>
                         <a class="dropdown-item" href="{% url 'dash' %}">dashboard</a>
                   </div>
@@ -70,9 +70,9 @@
                         <div class='col-lg-4 col-md-6 col-sm-12'>
                             <ul class='left'>
                                  <li><a href="http://127.0.0.1/italent/overons.php">Over ons</a></li>
-                                 <li><a href="">Begeleiding</a></li>
-                                 <li><a href="">Groepen</a></li>
-                                <li><a href="">Privacybeleid</a></li>
+                                 <li><a href="/begeleiding">Begeleiding</a></li>
+                                 <li><a href="/groepen">Groepen</a></li>
+                                <li><a href="/privacy">Privacybeleid</a></li>
                             </ul>
                         </div>    
                         <div class='col-lg-4 col-md-6 col-sm-12'>
@@ -80,7 +80,7 @@
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/agenda">Agenda</a></li>
                                 <li><a href="http://127.0.0.1/italent/nieuws.php">Nieuws</a></li>
-                                <li><a href="">Verhuur</a></li>
+                                <li><a href="/verhuur">Verhuur</a></li>
                                 <li><a href="">Contact</a></li>
                             </ul>
                         </div>                

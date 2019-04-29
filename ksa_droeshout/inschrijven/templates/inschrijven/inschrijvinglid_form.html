@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class='banner'>
+        <div class='container'>
+            <div class='banner-content'>
+                <h1>Inschrijvingen</h1>
+            </div>
+        </div>
+    </div>
+    <div class='agenda-item-content'>
+    <div class='container p-4'>
+        <div class='row'>
+            <div class='col-lg-12'>
+                <div class="card">
+                    <div class="card-header">Schrijf je lid in</div>
+                    <div class="card-body">
+                        {% if messages %}
+                            {% for message in messages %}
+                              <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                        {% endif %}
+                        <p>
+                            Schrijf je lid {{ lid.voornaam }} {{ lid.achternaam }} in
+                        </p>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form | crispy}}
+                            <button class="btn btn-outline-primary">Schrijf je lid in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

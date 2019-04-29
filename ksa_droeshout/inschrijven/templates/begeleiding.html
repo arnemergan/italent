@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class='banner'>
+        <div class='container'>
+            <div class='banner-content'>
+                <h1>Begeleiding</h1>
+            </div>
+        </div>
+    </div>
+    <div class='home-info'>
+        <div class='container-fluid'>
+            {% for begeleiding in begeleiding_list %}
+                <div class="row">
+                    <div class="col col-lg-4 col-md-6">
+                        <img class="img-fluid" src="{{ begeleiding.foto.url }}"/>
+                    </div>
+                    <div class="col col-lg-8 col-md-6">
+                        <div class='item-info-content card'>
+                            <div class='card-body'>
+                                <h2>{{ begeleiding.lid.voornaam }} {{ begeleiding.lid.achternaam }}</h2>
+                            <div class='agenda-item-info locatie'>
+                                <span>Telefoonnummer</span>0{{ begeleiding.tel }}
+                            </div>
+                            <div class='agenda-item-info prijs'>
+                                <span>Email</span>{{ begeleiding.email }}
+                            </div>
+                            <div class='agenda-item-info prijs'>
+                                <span>Groep</span>{{ begeleiding.groep.naam }}
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

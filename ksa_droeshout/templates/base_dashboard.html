@@ -32,40 +32,32 @@
       <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
           <a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a>
           <a href="{% url 'dash' %}" class="navbar-brand font-weight-bold text-uppercase text-base">KSA Droeshout</a>
-        <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-cog"></i></a>
-            <div aria-labelledby="userInfo" class="dropdown-menu">
-                <a href="#" class="dropdown-item">Instellingen</a>
-                <a href="{% url 'logout' %}" class="dropdown-item">Afmelden</a>
-            </div>
-          </li>
-        </ul>
+           <a href="{% url 'logout' %}" class="sidebar-toggler btn btn-outline-success float-right">Afmelden</a>
+
       </nav>
     </header>
     <div class="d-flex align-items-stretch">
       <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
-        <ul class="sidebar-menu list-unstyled">
-              <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>Home</span></a></li>
+          <ul class="sidebar-menu list-unstyled">
+              <li class="sidebar-list-item"><a href="{% url 'home' %}" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Terug</span></a></li>
+              <li class="sidebar-list-item"><a href="{% url 'dash' %}" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Home</span></a></li>
               <li class="sidebar-list-item"><a href="{% url 'dash_leden' %}" class="sidebar-link text-muted"><i class="o-sales-up-1 mr-3 text-gray"></i><span>Leden</span></a></li>
+              <li class="sidebar-list-item"><a href="{% url 'inschrijvinglid_list' 1 %}" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>Inschrijving lid</span></a></li>          </ul>
               <li class="sidebar-list-item"><a href="{% url 'agenda_item_list' %}" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Agenda</span></a></li>
-              <li class="sidebar-list-item"><a href="{% url 'inschrijving_all' %}" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>Inschrijving</span></a></li>
-          <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Inschrijving</span></a>
-            <div id="pages" class="collapse">
-              <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                  <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">test</a></li>
-              </ul>
-            </div>
-          </li>
-              <li class="sidebar-list-item"><a href="login.html" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Login</span></a></li>
-        </ul>
-        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family"></div>
-        <ul class="sidebar-menu list-unstyled">
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-database-1 mr-3 text-gray"></i><span>Demo</span></a></li>
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3 text-gray"></i><span>Demo</span></a></li>
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-paperwork-1 mr-3 text-gray"></i><span>Demo</span></a></li>
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Demo</span></a></li>
-        </ul>
+              <li class="sidebar-list-item"><a href="{% url 'inschrijving_all' %}" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>Inschrijving</span></a></li>          </ul>
+          <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">PAGES</div>
+          <ul class="sidebar-menu list-unstyled">
+              <li class="sidebar-list-item"><a href="{% url 'dash_groepen' %}" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>Groepen</span></a></li>
+          </ul>
+          <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">VERHUUR</div>
+          <ul class="sidebar-menu list-unstyled">
+            <li class="sidebar-list-item"><a href="{% url 'dash_verhuur' %}" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Verhuur</span></a></li>
+          </ul>
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">LEIDING</div>
+          <ul class="sidebar-menu list-unstyled">
+            <li class="sidebar-list-item"><a href="{% url 'dash_leiding' %}" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>User</span></a></li>
+          </ul>
       </div>
           <div class="page-holder w-100 d-flex flex-wrap">
                   <div class="container-fluid px-xl-5">

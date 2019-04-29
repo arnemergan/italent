@@ -14,9 +14,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -46,7 +43,10 @@ INSTALLED_APPS = [
     'dashboard',
     'datetimewidget',
     'django_tables2',
-    'bootstrap_datepicker_plus'
+    'bootstrap_datepicker_plus',
+    'verhuur',
+    'django_tables2_column_shifter',
+    'betterforms',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +138,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

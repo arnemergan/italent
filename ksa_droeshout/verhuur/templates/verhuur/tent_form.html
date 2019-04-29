@@ -1,0 +1,29 @@
+{% extends "base_dashboard.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Tent{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                  <div class="card-header">
+                      <form method="post" class="float-right w-100" enctype="multipart/form-data">
+                      <div class="float-right">
+                            <button class="btn btn-outline-primary">Save</button>
+                            <a href="{% url 'dash_verhuur' %}" class="btn btn-secondary">Terug</a>
+                      </div>
+                          <div class="float-right w-100">
+                            {% csrf_token %}
+                            {{ form| crispy }}
+                          </div>
+                        <div class="float-right">
+                            <button class="btn btn-outline-primary">Save</button>
+                            <a href="{% url 'dash_verhuur' %}" class="btn btn-secondary">Terug</a>
+                        </div>
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
