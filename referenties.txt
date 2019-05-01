@@ -1,0 +1,16 @@
+
+PRIVACYBELEID
+https://kgom.nl/29/privacybeleid-voorbeeld-die-je-kan-aanpassen-voor-je-eigen-site/
+
+PDF UPLOADS
+https://www.codingforentrepreneurs.com/blog/html-template-to-pdf-in-django/
+
+MANY TO MANY FIELDS SAVE
+https://djangosnippets.org/snippets/2568/
+
+IMPORT AND EXPORT CSV
+https://simpleisbetterthancomplex.com/packages/2016/08/11/django-import-export.html
+
+TEMPLATES
+https://getbootstrap.com/
+https://bootstrapious.com/p/bubbly-admin-template
