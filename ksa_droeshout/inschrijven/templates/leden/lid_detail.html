@@ -31,24 +31,28 @@
                         <p>{{ adres }}</p>
                     </div>
                       {% for item in contact %}
-                          <h3>{{ contact.type }} gegevens</h3>
+                          <h3>{{ item.type }} gegevens</h3>
                           <div class="card-columns">
                             <label>Naam</label>
-                            <p>{{ contact.voornaam }} {{ contact.naam }}</p>
+                            <p>{{ item.voornaam }} {{ item.naam }}</p>
                         </div>
                       <div class="card-columns">
                         <label>Tel</label>
-                        <p>{{ contact.tel }}</p>
+                        <p>{{ item.tel }}</p>
                       </div>
                       <div class="card-columns">
                         <label>Email</label>
-                        <p>{{ contact.email }}</p>
+                        <p>{{ item.email }}</p>
                     </div>
                       {% endfor %}
                   <h3>Medische fiche gegevens</h3>
                       <div class="card-columns">
                         <label>Allergie</label>
+                          {% if not fiche.allergie %}
+                              <p>geen</p>
+                          {% else %}
                         <p>{{ fiche.allergie }}</p>
+                          {% endif %}
                       </div>
                   </div>
                     <div class="card-footer">

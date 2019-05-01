@@ -92,25 +92,22 @@ class FormMultiLid(MultiModelForm):
             lid = objects['lid']
             lid.adresid = obj
             lid_obj = Lid.objects.filter(voornaam=lid.voornaam,achternaam=lid.achternaam,geboortedatum=lid.geboortedatum,adresid=lid.adresid)
-            if lid_obj is None:
-                lid.save()
-                ouder = objects['ouder']
-                arts = objects['arts']
-                extra = objects['extra']
-                extra.lid = lid
-                extra.type = 'Extra'
-                extra.save()
-                arts.lid = lid
-                arts.type = 'Huisarts'
-                arts.save()
-                ouder.lid = lid
-                ouder.type = 'Ouder'
-                ouder.save()
-                med = objects['med']
-                med.lid = lid
-                med.save()
-            else:
-                raise ValidationError('lid bestaat al')
+            lid.save()
+            ouder = objects['ouder']
+            arts = objects['arts']
+            extra = objects['extra']
+            extra.lid = lid
+            extra.type = 'Extra'
+            extra.save()
+            arts.lid = lid
+            arts.type = 'Huisarts'
+            arts.save()
+            ouder.lid = lid
+            ouder.type = 'Ouder'
+            ouder.save()
+            med = objects['med']
+            med.lid = lid
+            med.save()
         return objects
 
 class FormInschrijving(forms.ModelForm):

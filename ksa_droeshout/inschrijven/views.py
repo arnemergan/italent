@@ -152,6 +152,13 @@ def export_leden_csv(request):
     response['Content-Disposition'] = 'attachment; filename="leden.xls"'
     return response
 
+# def export_inschrijving_csv(request):
+#     leden_resource = InschrijvingLidResource()
+#     data = leden_resource.export()
+#     response = HttpResponse(data.xls, content_type='application/vnd.ms-excel')
+#     response['Content-Disposition'] = 'attachment; filename="leden.xls"'
+#     return response
+
 class BegeleidingView(generic.ListView):
     model = Leiding
     template_name = 'begeleiding.html'

@@ -77,7 +77,8 @@ urlpatterns = [
     path('inschrijven/lid/<int:pk>/',login_required(inschrijven_views.InschrijvenLidListView.as_view()),name='inschrijvinglid_list'),
     path('inschrijven/lid/list/',login_required(inschrijven_views.InschrijvenLidListView.as_view()),name='list_inschrijvinglid'),
 
-    path('leden/download/',inschrijven_views.export_leden_csv,name='leden_download'),
+    path('leden/download/',login_required(inschrijven_views.export_leden_csv),name='leden_download'),
+   # path('inscrhijving/download/',login_required(inschrijven_views.export_inschrijving_csv),name='export_leden'),
 
     #auth
     path('auth/login/',auth_views.LoginView.as_view(),name="login"),
