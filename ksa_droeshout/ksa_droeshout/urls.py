@@ -92,6 +92,6 @@ urlpatterns = [
     path('dashboad/leden/<uuid:lid_id>/',login_required(inschrijven_views.LidView.as_view()),name="dash_lid"),
     path('dashboard/leden/<uuid:lid_id>/delete/',login_required(inschrijven_views.LidDeleteView()),name='lid_delete'),
 
-    path('dashboard/setting/<int:pk>/change_password/',login_required(auth_views.PasswordChangeView.as_view()),name="change_password"),
-    path('dashboard/setting/<int:pk>/change_password/done/',login_required(auth_views.PasswordChangeDoneView.as_view()),name="change_password_done"),
+    path('dashboard/setting/change_password/',login_required(auth_views.PasswordChangeView.as_view()),name="change_password"),
+    path('dashboard/setting/change_password/done/',login_required(auth_views.PasswordChangeDoneView.as_view()),name="change_password_done"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,10 +1,13 @@
 from django import forms
-from .models import Lid,Inschrijving,InschrijvingLid,Adres,Groep,Leiding,Contact_Geg,Fiche_Geg,Allergie,InschrijvingAllowed
+from .models import Lid,Inschrijving,InschrijvingLid,Adres,Groep,Leiding,Contact_Geg,Fiche_Geg,Allergie
 from bootstrap_datepicker_plus import DateTimePickerInput
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Q
 from betterforms.multiform import MultiModelForm
+from django.http import HttpResponseRedirect,HttpResponse
+from django.core.exceptions import ValidationError
+from django.contrib import messages
 from django_select2.forms import Select2MultipleWidget
 from rolepermissions.roles import assign_role
 
@@ -27,6 +30,7 @@ class FormLidNieuw(forms.ModelForm):
             'voornaam':'voornaam lid',
             'achternaam':'achternaam lid'
         }
+
 
 
 class FormAdres(forms.ModelForm):
@@ -82,29 +86,31 @@ class FormMultiLid(MultiModelForm):
 
     def save(self, commit=True):
         objects = super(FormMultiLid, self).save(commit=False)
-
         if commit:
             adres = objects['adres']
-            adres.get
-            adres.save()
+            obj,created = Adres.objects.get_or_create(straat=adres.straat,nr=adres.nr,postcode=adres.postcode,stad=adres.stad)
             lid = objects['lid']
-            lid.adresid = adres
-            lid.save()
-            ouder = objects['ouder']
-            arts = objects['arts']
-            extra = objects['extra']
-            extra.lid = lid
-            extra.type = 'Extra'
-            extra.save()
-            arts.lid = lid
-            arts.type = 'Huisarts'
-            arts.save()
-            ouder.lid = lid
-            ouder.type = 'Ouder'
-            ouder.save()
-            med = objects['med']
-            med.lid = lid
-            med.save()
+            lid.adresid = obj
+            lid_obj = Lid.objects.filter(voornaam=lid.voornaam,achternaam=lid.achternaam,geboortedatum=lid.geboortedatum,adresid=lid.adresid)
+            if lid_obj is None:
+                lid.save()
+                ouder = objects['ouder']
+                arts = objects['arts']
+                extra = objects['extra']
+                extra.lid = lid
+                extra.type = 'Extra'
+                extra.save()
+                arts.lid = lid
+                arts.type = 'Huisarts'
+                arts.save()
+                ouder.lid = lid
+                ouder.type = 'Ouder'
+                ouder.save()
+                med = objects['med']
+                med.lid = lid
+                med.save()
+            else:
+                raise ValidationError('lid bestaat al')
         return objects
 
 class FormInschrijving(forms.ModelForm):
@@ -115,33 +121,34 @@ class FormInschrijving(forms.ModelForm):
             'agendaitemid':'titel'
         }
 
-class FormAllowGroep(forms.ModelForm):
-    class Meta:
-        model = InschrijvingAllowed
-        fields = ['groep']
-        widgets = {
-            'groep':Select2MultipleWidget
-        }
-        labels = {
-            'groep':'groepen die mogen inschrijven'
-        }
+# class FormAllowGroep(forms.ModelForm):
+#     class Meta:
+#         model = InschrijvingAllowed
+#         fields = ['groep']
+#         widgets = {
+#             'groep':forms.CheckboxSelectMultiple
+#         }
+#         labels = {
+#             'groep':'groepen die mogen inschrijven'
+#         }
+#
 
-class FormInschrijvingAllow(MultiModelForm):
-    form_classes = {
-        'inschrijving':FormInschrijving,
-        'allow':FormAllowGroep,
-    }
-
-    def save(self, commit=True):
-        objects = super(FormInschrijvingAllow, self).save(commit=False)
-
-        if commit:
-            inschrijving = objects['inschrijving']
-            allow = objects['allow']
-            inschrijving.save()
-            allow.inschrijving = inschrijving
-            allow.save()
-        return objects
+# class FormInschrijvingAllow(MultiModelForm):
+#     form_classes = {
+#         'inschrijving':FormInschrijving,
+#         'allow':FormAllowGroep,
+#     }
+#
+#     def save(self, commit=True):
+#         objects = super(FormInschrijvingAllow, self).save(commit=False)
+#         if commit:
+#             inschrijving = objects['inschrijving']
+#             allow = objects['allow']
+#             inschrijving.save()
+#             allow.inschrijving = inschrijving
+#             allow.save()
+#             print(allow.groep.all())
+#         return objects
 
 class FormLidInschrijven(forms.ModelForm):
     class Meta:
@@ -184,7 +191,6 @@ class FormAddUser(MultiModelForm):
             user = objects['user']
             leiding = objects['leiding']
             user.save()
-            assign_role(user, 'normal')
             leiding.userid = user
             leiding.save()
         return objects

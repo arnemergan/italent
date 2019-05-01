@@ -1,5 +1,5 @@
 from django.views import generic
-from .forms import FormAddUser,FormSearch,FormInschrijvingAllow,FormLidInschrijven,FormGroepen,FormLeiding,FormMultiLid,FormSearchLid,FormInschrijving
+from .forms import FormAddUser,FormSearch,FormLidInschrijven,FormGroepen,FormLeiding,FormMultiLid,FormSearchLid,FormInschrijving
 from .models import Inschrijving, Lid,InschrijvingLid,Leiding,Groep,Contact_Geg,InschrijvingAllowed,Fiche_Geg
 from agenda.models import Adres
 from django.contrib.messages.views import SuccessMessageMixin
@@ -31,11 +31,7 @@ class InschrijvenDetailView(SuccessMessageMixin,generic.DetailView):
             achternaam = self.request.GET.get('achternaam')
             if (len(voornaam) > 2 and len(achternaam) > 2):
                 query = Lid.objects.filter(voornaam__contains=voornaam, achternaam__contains=achternaam)
-           #     if not query:
-                    #messages.ERROR(self.request,'geen lid gevonden met die naam')
                 context['search'] = query
-          #  else:
-                #messages.ERROR(self.request,'de lengte van voor en achternaam moeten minstens 2 letters lang zijn')
         return context
 
 class InschrijvenLidView(SuccessMessageMixin,generic.CreateView):
@@ -72,23 +68,22 @@ class InschrijvenLidListView(SingleTableView):
 
 class InschrijvenCreateView(SuccessMessageMixin,generic.CreateView):
     model = Inschrijving
-    form_class = FormInschrijvingAllow
+    form_class = FormInschrijving
     success_url = '/inschrijven/list/'
     success_message = 'inschrijving is succesvol gecreëerd'
 
 class InschrijvenUpdateView(SuccessMessageMixin,generic.UpdateView):
     model = Inschrijving
-    form_class = FormInschrijvingAllow
+    form_class = FormInschrijving
     success_url = '/inschrijven/list/'
     success_message = 'inschrijving is succesvol geupdated'
 
-    def get_form_kwargs(self):
-        kwargs = super(InschrijvenUpdateView, self).get_form_kwargs()
-        kwargs.update(instance={
-            'inschrijving': self.object,
-            'allow': InschrijvingAllowed.objects.get('pk').groep
-        })
-        return kwargs
+    # def get_form_kwargs(self):
+    #     kwargs = super(InschrijvenUpdateView, self).get_form_kwargs()
+    #     kwargs.update(instance={
+    #         'inschrijving': self.object
+    #     })
+    #     return kwargs
 
 class InschrijvenDeleteView(UserPassesTestMixin,SuccessMessageMixin,generic.DeleteView):
     model = Inschrijving

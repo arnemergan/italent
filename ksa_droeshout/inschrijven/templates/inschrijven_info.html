@@ -19,6 +19,8 @@
             <div class='col-lg-8 col-md-8 col-sm-12'>
                 <h4>{{ inschrijving.agendaitemid.titel }}</h4>
                 <p>{{ inschrijving.agendaitemid.beschrijving }}</p>
+                <p class="alert alert-info">De <b>{{ inschrijving.prijs }}</b> euro dient overgeschreven te worden op ons rekeningnummer <b>BE69 7995 1948 1478</b>
+                    met vermelding van naam en voornaam lid.  </p>
                 <div class="card">
                     <div class="card-header">Schrijf je lid in</div>
                     <div class="card-body">
@@ -28,7 +30,7 @@
                             {% endfor %}
                         {% endif %}
                         {% if search|length == 0 %}
-                            <div class="alert alert-danger">Geen lid gevonden met die naam, probeer nog eens, let op de lengte van voor en achternaam moeten minstens 2 letters lang zijn, indien je nog niet bent ingeschreven voor dit ksa jaar gelieve op onderstaande knop te duwen</div>
+                            Indien je nog niet bent ingeschreven gelieve op onderstaande knop te duwen
                             <a href="{% url 'inschrijven_nieuw' %}" class="btn btn-outline-info">Schrijf je nieuw lid in</a>
                         {% endif %}
                         {% for item in search %}
@@ -38,11 +40,16 @@
                             {{ form | crispy}}
                             <button class="btn btn-outline-primary">Zoek je lid</button>
                         </form>
+                    {% if not search %}
+                        <div class="alert alert-info" role="alert">
+                              let op de lengte van voor en achternaam moeten minstens 2 letters lang zijn,
+                            </div>
+                    {% endif %}
                     </div>
                 </div>
                 <div class='item-links'>
                     <h5>Voor meer informatie</h5>
-                    <a href="/media/{{ inschrijving.brief }}">Download brief</a>
+                    <a href="/media/{{ inschrijving.brief }}" download="">Download brief</a>
                 </div>
                 <div class='item-social-links'>
                     <h5>Volg ons op sociale media</h5>
