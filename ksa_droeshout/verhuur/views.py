@@ -50,25 +50,33 @@ class VerhuurMateriaalUpdate(SuccessMessageMixin,generic.UpdateView):
 class TentCreateImage(SuccessMessageMixin,generic.CreateView):
     model = models.TentFoto
     template_name = 'verhuur/tent_form.html'
-    success_url = '/dashboard/verhuur/'
+    success_url = '/verhuur/tent/image/list/'
     success_message = 'Image is succesvol gecreeerd'
     form_class = forms.FormTentFoto
 
 class LokaalCreateImage(SuccessMessageMixin,generic.CreateView):
     model = models.Lokaalfoto
     template_name = 'verhuur/lokaal_form.html'
-    success_url = '/dashboard/verhuur/'
+    success_url = '/verhuur/lokaal/image/list/'
     success_message = 'Image is succesvol gecreeerd'
     form_class = forms.FormLokaalFoto
 
 class LokaalDeleteImage(SuccessMessageMixin,generic.DeleteView):
     model = models.Lokaalfoto
-    success_url = '/dashboard/verhuur/'
+    success_url = '/verhuur/lokaal/image/list/'
     success_message = 'Image succesvol gedeleted'
     template_name = 'verhuur/verhuur_confirm_delete.html'
 
 class TentDeleteImage(SuccessMessageMixin,generic.DeleteView):
     model = models.TentFoto
-    success_url = '/dashboard/verhuur/'
+    success_url = '/verhuur/tent/image/list/'
     success_message = 'Image succesvol gedeleted'
     template_name = 'verhuur/verhuur_confirm_delete.html'
+
+class TentImageList(generic.ListView):
+    model = models.TentFoto
+    context_object_name = 'tent_images'
+
+class LokaalImageList(generic.ListView):
+    model = models.Lokaalfoto
+    context_object_name = 'lokaal_images'

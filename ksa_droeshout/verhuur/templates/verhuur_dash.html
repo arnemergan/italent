@@ -20,6 +20,10 @@
                       </div>
                   </div>
                   <div class="card-body">
+                      <div class="row">
+                          <div class="col-lg-12"><a class="btn btn-outline-success" href="{% url 'add_lokaal' %}">Voeg foto's toe van het lokaal</a></div>
+                          <div class="col-lg-12"><a class="btn btn-outline-success" href="{% url 'lokaal_list' %}">Foto's lokaal</a></div>
+                      </div>
                   </div>
                 </div>
             {% for tent in tenten %}
@@ -35,6 +39,10 @@
                       </div>
                   </div>
                   <div class="card-body">
+                      <div class="row">
+                          <div class="col-lg-12"><a class="btn btn-outline-success" href="{% url 'add_tent' %}">Voeg foto's van de tent</a></div>
+                          <div class="col-lg-12"><a class="btn btn-outline-success" href="{% url 'tent_list' %}">Foto's tent</a></div>
+                      </div>
                   </div>
                 </div>
         {% endfor %}

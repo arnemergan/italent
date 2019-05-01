@@ -20,8 +20,12 @@
                         {% endfor %}
                         <form method="post">
                             {% csrf_token %}
-                            {{ form | crispy}}
-                            {{ formadres }}
+                            <h3>Lid gegevens</h3>
+                            {{ form.lid | crispy}}
+                            <h3>Adres gegevens</h3>
+                            {{ form.adres | crispy}}
+                            <h3>Ouder gegevens</h3>
+                            {{ form.ouder | crispy}}
                             <button class="btn btn-outline-primary">Schrijf je lid in</button>
                         </form>
                     </div>

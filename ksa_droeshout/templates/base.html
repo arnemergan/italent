@@ -30,19 +30,16 @@
               <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item pl-3">
-                    <a class="nav-link" href="/agenda">agenda</a>
+                    <a class="nav-link" href="{% url 'agenda' %}">agenda</a>
                   </li>
                   <li class="nav-item pl-3">
-                    <a class="nav-link" href="http://127.0.0.1/italent/nieuws.php">nieuws</a>
-                  </li>
-                  <li class="nav-item pl-3">
-                    <a class="nav-link" href="/verhuur">verhuur</a>
+                    <a class="nav-link" href="{% url 'verhuur' %}">verhuur</a>
                   </li> 
                 <li class="nav-item pl-3">
-                    <a class="nav-link" href="#">contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">contact</a>
                   </li>
                 <li class="nav-item pl-3">
-                    <a class="nav-link" href="/inschrijven">inschrijven</a>
+                    <a class="nav-link" href="{% url 'inschrijven' %}">inschrijven</a>
                   </li>
                    <!-- Dropdown -->
                 <li class="nav-item dropdown pl-3">
@@ -50,8 +47,8 @@
                     meer
                   </a>
                   <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/begeleiding">begeleiding</a>
-                        <a class="dropdown-item" href="/groepen">groepen</a>
+                        <a class="dropdown-item" href="{% url 'begeleiding' %}">begeleiding</a>
+                        <a class="dropdown-item" href="{% url 'groepen' %}">groepen</a>
                         <a class="dropdown-item" href="#">over ons</a>
                         <a class="dropdown-item" href="{% url 'dash' %}">dashboard</a>
                   </div>
@@ -79,9 +76,8 @@
                             <ul class='middle'>
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/agenda">Agenda</a></li>
-                                <li><a href="http://127.0.0.1/italent/nieuws.php">Nieuws</a></li>
                                 <li><a href="/verhuur">Verhuur</a></li>
-                                <li><a href="">Contact</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </div>                
                         <div class='col-lg-4 col-md-12 right'>

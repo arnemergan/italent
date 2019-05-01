@@ -8,6 +8,7 @@
                     <h6 class="text-uppercase mb-0">{{ lid.voornaam }} {{ lid.achternaam }}</h6>
                   </div>
                   <div class="card-body">
+                      <h3>Lid gegevens</h3>
                     <div class="card-columns">
                         <label>GeboorteDatum</label>
                         <p>{{ lid.geboortedatum }}</p>
@@ -24,6 +25,31 @@
                         <label>Actief</label>
                         <p>{{ lid.actief }}</p>
                     </div>
+                      <h3>Adres gegevens</h3>
+                      <div class="card-columns">
+                        <label>Adres</label>
+                        <p>{{ adres }}</p>
+                    </div>
+                      {% for item in contact %}
+                          <h3>{{ contact.type }} gegevens</h3>
+                          <div class="card-columns">
+                            <label>Naam</label>
+                            <p>{{ contact.voornaam }} {{ contact.naam }}</p>
+                        </div>
+                      <div class="card-columns">
+                        <label>Tel</label>
+                        <p>{{ contact.tel }}</p>
+                      </div>
+                      <div class="card-columns">
+                        <label>Email</label>
+                        <p>{{ contact.email }}</p>
+                    </div>
+                      {% endfor %}
+                  <h3>Medische fiche gegevens</h3>
+                      <div class="card-columns">
+                        <label>Allergie</label>
+                        <p>{{ fiche.allergie }}</p>
+                      </div>
                   </div>
                     <div class="card-footer">
                         <a href='{% url 'lid_delete' lid.uuid %}' class="btn btn-danger">Verwijder</a>

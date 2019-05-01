@@ -1,0 +1,37 @@
+{% extends "base_dashboard.html" %}
+{% block content %}
+<section class="py-5">
+    <div class="row">
+        <div class="col-lg-12">
+                    {% if messages %}
+                {% for message in messages %}
+                  <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            {% endif %}
+            <div class="card">
+                  <div class="card-header">
+                      <div class="row">
+                          <div class="col col-lg-6">
+                            <h6 class="text-uppercase mb-0">Lokaal - foto's</h6>
+                          </div>
+                            <div class="col col-lg-6">
+                                <a href="{% url 'dash_verhuur' %}" class="float-right btn btn-secondary">Terug</a>
+                                <a href="{% url 'add_lokaal' %}" class="btn btn-outline-primary float-right">Nieuwe foto</a>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="card-body">
+
+                    <div class="row">
+                       {% for item in lokaal_images %}
+                           <div class="col-lg-3 col-md-3 col-sm-6">
+                               <a href="{% url 'del_lokaal' item.id %}"><img class="img-fluid" src="{{ item.image.url }}"></a>
+                           </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

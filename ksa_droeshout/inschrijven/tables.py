@@ -13,6 +13,7 @@ class LedenTable(tables.Table):
 class InschrijvingTable(tables.Table):
     edit = TemplateColumn(template_name='inschrijven/inschrijving_edit_btn.html')
     verwijder = TemplateColumn(template_name='inschrijven/inschrijving_delete_btn.html')
+    ingeschreven = TemplateColumn(template_name='inschrijven/list_ingeschreven.html')
 
     class Meta:
         model = Inschrijving
@@ -25,6 +26,7 @@ class GroepenTable(tables.Table):
 
 class LeidingTable(tables.Table):
     verwijder = TemplateColumn(template_name='leiding/leiding_delete_btn.html')
+    update = TemplateColumn(template_name='leiding/leiding_update_btn.html')
 
     class Meta:
         model = Leiding

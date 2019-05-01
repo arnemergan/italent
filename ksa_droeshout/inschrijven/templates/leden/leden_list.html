@@ -1,4 +1,5 @@
 {% extends "base_dashboard.html" %}
+{% load crispy_forms_tags %}
 {% load render_table from django_tables2 %}
 {% block content %}
 <section class="py-5">
@@ -6,8 +7,19 @@
         <div class="col-lg-12">
             <div class="card">
                   <div class="card-header">
-                    <h6 class="text-uppercase mb-0">Leden</h6>
+                      <div class="row">
+                      <div class="col-lg-6">
+                        <h6 class="text-uppercase mb-0">Leden</h6>
+                      </div>
+                      <div class="col-lg-6">
+                        <a href="{% url 'leden_download' %}" class="float-right btn btn-outline-secondary">Export to excel</a>
+                      </div>
+                      </div>
                   </div>
+                <form method="get">
+                    {{ search | crispy}}
+                    <button type="submit" class="btn btn-outline-primary">Zoek</button>
+                </form>
                   <div class="card-body">
                       {% render_table table %}
                   </div>

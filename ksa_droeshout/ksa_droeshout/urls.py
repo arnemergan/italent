@@ -15,6 +15,8 @@ from django.contrib.auth.models import User
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    #contact
+    path('contact/',index_views.ContactView.as_view(),name='contact'),
     #privacy
     path('privacy/',index_views.PrivacyView.as_view(),name='privacy'),
 
@@ -33,15 +35,18 @@ urlpatterns = [
     path('verhuur/tent/image/<int:pk>/delete',login_required(verhuur_views.TentDeleteImage.as_view()),name='del_tent'),
     path('verhuur/lokaal/image/add/', login_required(verhuur_views.LokaalCreateImage.as_view()), name='add_lokaal'),
     path('verhuur/lokaal/image/<int:pk>/delete', login_required(verhuur_views.LokaalDeleteImage.as_view()), name='del_lokaal'),
+    path('verhuur/lokaal/image/list/',login_required(verhuur_views.LokaalImageList.as_view()),name='lokaal_list'),
+    path('verhuur/tent/image/list/',login_required(verhuur_views.TentImageList.as_view()),name='tent_list'),
 
     #begeleiding
     path('begeleiding/',inschrijven_views.BegeleidingView.as_view(),name='begeleiding'),
     path('dashboard/leiding/',login_required(inschrijven_views.LeidingListView.as_view()),name='dash_leiding'),
     path('dashboard/leiding/add/',login_required(inschrijven_views.LeidingCreateView.as_view()),name='add_leiding'),
+    path('dashboard/leiding/<int:pk>/update',login_required(inschrijven_views.LeidingUpdateView.as_view()), name='update_leiding'),
     path('dashboard/leiding/<int:pk>/delete', login_required(inschrijven_views.LeidingDeleteView.as_view()),name='del_leiding'),
-    path('dashboard/user/add',login_required(inschrijven_views.UserCreateView.as_view()),name='add_user'),
-    path('dashboard/user/',login_required(inschrijven_views.UserListView.as_view()),name='users'),
-    path('dashboard/user/<int:pk>/delete/',login_required(inschrijven_views.UserDeleteView.as_view()),name='del_user'),
+    # path('dashboard/user/add',login_required(inschrijven_views.UserCreateView.as_view()),name='add_user'),
+    # path('dashboard/user/',login_required(inschrijven_views.UserListView.as_view()),name='users'),
+    # path('dashboard/user/<int:pk>/delete/',login_required(inschrijven_views.UserDeleteView.as_view()),name='del_user'),
 
     #agenda
     path('', agenda_views.IndexView.as_view(), name='home'),
@@ -52,6 +57,8 @@ urlpatterns = [
     path('agenda/item/<int:pk>/update/',login_required(agenda_views.AgendaItemUpdateView.as_view()),name='agenda_item_update'),
     path('agenda/item/<int:pk>/delete/',login_required(agenda_views.AgendaItemDeleteView.as_view()),name='agenda_item_delete'),
     path('agenda/list/',login_required(agenda_views.AgendaItemView.as_view()),name="agenda_item_list"),
+
+    path ('agenda/download/',agenda_views.write_pdf_view,name='agenda_download'),
 
     #inschrijven
     path('inschrijven/',inschrijven_views.InschrijvenView.as_view(),name='inschrijven'),
@@ -65,6 +72,9 @@ urlpatterns = [
     path('inschrijven/list/',login_required(inschrijven_views.InschrijvingAllView.as_view()),name='inschrijving_all'),
 
     path('inschrijven/lid/<int:pk>/',login_required(inschrijven_views.InschrijvenLidListView.as_view()),name='inschrijvinglid_list'),
+    path('inschrijven/lid/list/',login_required(inschrijven_views.InschrijvenLidListView.as_view()),name='list_inschrijvinglid'),
+
+    path('leden/download/',inschrijven_views.export_leden_csv,name='leden_download'),
 
     #auth
     path('auth/login/',auth_views.LoginView.as_view(),name="login"),

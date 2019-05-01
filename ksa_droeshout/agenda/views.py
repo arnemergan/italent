@@ -4,6 +4,14 @@ from agenda.forms import FormAgendaItem
 from .models import AgendaItem
 from django_tables2 import SingleTableView
 from agenda import tables
+from agenda.utils import render_to_pdf,get_template
+from django.http import HttpResponse
+import datetime
+from django.views.generic import View
+
+
+from django.db.models import Q
+
 
 class IndexView(generic.ListView):
     template_name = 'index.html'
@@ -45,3 +53,20 @@ class AgendaView(generic.ListView):
 
     def get_queryset(self):
         return AgendaItem.objects.order_by('datumvan')
+
+def write_pdf_view(request):
+        template = get_template('pdf/agenda_ksa.html')
+        context = {
+            'agenda_list':AgendaItem.objects.all().order_by('datumvan')
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('pdf/agenda_ksa.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            content = 'inline; filename="agenda_ksa_droeshout.pdf"'
+            download = request.GET.get("download")
+            if download:
+                content = 'attachment; filename="agenda_ksa_droeshout.pdf"'
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")

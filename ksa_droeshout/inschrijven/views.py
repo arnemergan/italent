@@ -1,14 +1,13 @@
-from django.shortcuts import redirect
 from django.views import generic
-from .forms import FormSearch,FormLidNieuw,FormInschrijving,FormLidInschrijven,FormAdres,FormGroepen,FormLeiding,FormUser,FormMultiLid
-from .models import Inschrijving, Lid,InschrijvingLid,Leiding,Groep
+from .forms import FormAddUser,FormSearch,FormInschrijvingAllow,FormLidInschrijven,FormGroepen,FormLeiding,FormMultiLid,FormSearchLid,FormInschrijving
+from .models import Inschrijving, Lid,InschrijvingLid,Leiding,Groep,Contact_Geg,InschrijvingAllowed,Fiche_Geg
+from agenda.models import Adres
 from django.contrib.messages.views import SuccessMessageMixin
 from inschrijven import tables
+from django.db.models import Q
 from django_tables2 import SingleTableView
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.contrib.auth.models import User
-from django.contrib import messages
+from .resources import LidResource
+from django.http import HttpResponse
 
 
 
@@ -74,15 +73,23 @@ class InschrijvenLidListView(SingleTableView):
 
 class InschrijvenCreateView(SuccessMessageMixin,generic.CreateView):
     model = Inschrijving
-    form_class = FormInschrijving
+    form_class = FormInschrijvingAllow
     success_url = '/inschrijven/list/'
     success_message = 'inschrijving is succesvol gecreëerd'
 
 class InschrijvenUpdateView(SuccessMessageMixin,generic.UpdateView):
     model = Inschrijving
-    form_class = FormInschrijving
+    form_class = FormInschrijvingAllow
     success_url = '/inschrijven/list/'
     success_message = 'inschrijving is succesvol geupdated'
+
+    def get_form_kwargs(self):
+        kwargs = super(InschrijvenUpdateView, self).get_form_kwargs()
+        kwargs.update(instance={
+            'inschrijving': self.object,
+            'allow': InschrijvingAllowed.objects.get('pk').groep
+        })
+        return kwargs
 
 class InschrijvenDeleteView(SuccessMessageMixin,generic.DeleteView):
     model = Inschrijving
@@ -98,25 +105,37 @@ class InschrijvingAllView(SingleTableView):
 class InschrijveNieuwView(SuccessMessageMixin,generic.CreateView):
     model = Lid
     form_class = FormMultiLid
-    success_url = '/inschrijven/nieuw/'
+    success_url = '/inschrijven/'
     success_message = 'Uw lid is succesvol ingeschreven'
-
-    def form_valid(self, form):
-        adres = form['adres'].save()
-        lid = form['lid'].save(commit=False)
-        lid.adresid = adres
-        lid.save()
-        return redirect(self.get_success_url())
 
 class LedenView(SingleTableView):
     template_name = 'leden/leden_list.html'
     model = Lid
     table_class = tables.LedenTable
 
+    def get_context_data(self, **kwargs):
+        context = super(LedenView,self).get_context_data(**kwargs)
+        context['search'] = FormSearchLid
+        return context
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            object_list = Lid.objects.filter(Q(voornaam__contains=query) | Q(achternaam__contains=query))
+        else:
+            object_list = Lid.objects.all()
+        return object_list
+
 class LidView(generic.DetailView):
     model = Lid
     template_name = 'leden/lid_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(LidView,self).get_context_data(**kwargs)
+        context['contact'] = Contact_Geg.objects.filter(lid__uuid__exact=self.kwargs.get('lid_id'))
+        context['fiche'] = Fiche_Geg.objects.filter(lid__uuid__exact=self.kwargs.get('lid_id')).first()
+        context['adres'] = Adres.objects.filter(lid__uuid__exact=self.kwargs.get('lid_id')).first()
+        return context
     def get_object(self):
         return Lid.objects.get(pk=self.kwargs['lid_id'])
 
@@ -126,6 +145,13 @@ class LidDeleteView(generic.DeleteView):
 
     def get_object(self):
         return Lid.objects.get(pk=self.kwargs['lid_id'])
+
+def export_leden_csv(request):
+    leden_resource = LidResource()
+    data = leden_resource.export()
+    response = HttpResponse(data.xls, content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="leden.xls"'
+    return response
 
 class BegeleidingView(generic.ListView):
     model = Leiding
@@ -159,6 +185,13 @@ class LeidingCreateView(SuccessMessageMixin,generic.CreateView):
     template_name = 'leiding/leiding_form.html'
     success_url = '/dashboard/leiding'
     success_message = 'leiding is gecreeerd'
+    form_class = FormAddUser
+
+class LeidingUpdateView(SuccessMessageMixin,generic.UpdateView):
+    model = Leiding
+    template_name = 'leiding/leiding_form.html'
+    success_url = '/dashboard/leiding'
+    success_message = 'leiding is gecreeerd'
     form_class = FormLeiding
 
 class LeidingDeleteView(SuccessMessageMixin,generic.DeleteView):
@@ -167,20 +200,20 @@ class LeidingDeleteView(SuccessMessageMixin,generic.DeleteView):
     template_name = 'leiding/leiding_confirm_delete.html'
     success_message = 'leiding is succesvol gedeleted'
 
-class UserCreateView(SuccessMessageMixin,generic.CreateView):
-    model = User
-    form_class = FormUser
-    success_url = '/dashboard/user/'
-    template_name = 'leiding/leiding_form.html'
-    success_message = 'user is succesvol gecreeerd'
-
-class UserListView(SingleTableView):
-    model = Leiding
-    template_name = 'leiding/user_list.html'
-    table_class = tables.UserTable
-
-class UserDeleteView(SuccessMessageMixin,generic.DeleteView):
-    model = Leiding
-    success_url = '/dashboard/user/'
-    template_name = 'leiding/user_confirm_del.html'
-    success_message = 'user is succesvol gedeleted'
+# class UserCreateView(SuccessMessageMixin,generic.CreateView):
+#     model = User
+#     form_class = FormUser
+#     success_url = '/dashboard/user/'
+#     template_name = 'leiding/leiding_form.html'
+#     success_message = 'user is succesvol gecreeerd'
+#
+# class UserListView(SingleTableView):
+#     model = Leiding
+#     template_name = 'leiding/user_list.html'
+#     table_class = tables.UserTable
+#
+# class UserDeleteView(SuccessMessageMixin,generic.DeleteView):
+#     model = Leiding
+#     success_url = '/dashboard/user/'
+#     template_name = 'leiding/user_confirm_del.html'
+#     success_message = 'user is succesvol gedeleted'

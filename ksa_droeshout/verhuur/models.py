@@ -13,6 +13,9 @@ class Lokaal(models.Model):
     prijs = models.DecimalField(decimal_places=2,max_digits=5)
     waarborg = models.DecimalField(decimal_places=2,max_digits=5)
 
+    def __str__(self):
+        return 'lokaal'
+
 class Lokaalfoto(models.Model):
     lokaalid = models.ForeignKey(Lokaal,models.CASCADE)
     image = models.ImageField(upload_to='images/lokaal')

@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'verhuur',
     'django_tables2_column_shifter',
     'betterforms',
+    'django_select2',
+    'reportlab',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -144,9 +147,12 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
 EMAIL_HOST = 'send.one.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'leiding@ksadroeshout.be'
-EMAIL_HOST_PASSWORD = 'X4^@@V#rt#SW3RSEuVf0uef0ih$@h%s^DA#aY@m*0UCKdtZ5V8'
+EMAIL_HOST_PASSWORD = 'Leiding2019'
 EMAIL_USE_TLS = True
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
+
