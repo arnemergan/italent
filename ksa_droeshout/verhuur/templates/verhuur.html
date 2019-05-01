@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class='home-info'>
-        <div class='container-fluid'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <div class='item-info-content card'>
@@ -27,7 +27,13 @@
                             <span>Waarborg</span>€ {{ lokaal.waarborg }}
                         </div>
                         <div class='agenda-item-info prijs'>
-                            <span>Beschrijving</span>€ {{ lokaal.beschrijving }}
+                            <span>Beschrijving</span> {{ lokaal.beschrijving }}
+                        </div>
+                        <div class='agenda-item-info prijs'>
+                            <span>Contract</span> <a href="/media/{{ lokaal.contract }}" download="">Download contract</a>
+                        </div>
+                         <div class='agenda-item-info prijs'>
+                            <span>Verdere info en boekingen</span> <a href="mailto:sofie.moens@outlook.com">sofie.moens@outlook.com</a>
                         </div>
                         </div>
                     </div>
@@ -46,6 +52,7 @@
                 </div>
                 </div>
                 </div>
+
             </div>
             <div class="row">
                 <div class="col col-lg-12">
@@ -71,6 +78,12 @@
                         <div class='agenda-item-info prijs'>
                             <span>Waarborg</span>€ {{ tent.waarborg }}
                         </div>
+                        <div class='agenda-item-info prijs'>
+                            <span>Contract</span> <a href="/media/{{ tent.contract }}" download="">Download contract</a>
+                        </div>
+                         <div class='agenda-item-info prijs'>
+                            <span>Verdere info en boekingen</span> <a href="mailto:tim.vanmol@hotmail.com">tim.vanmol@hotmail.com</a>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -89,6 +102,21 @@
                     </div>
                 </div>
                 </div>
+                </div>
+                <div class='col-lg-12'>
+                    <div class='card item-info-content'>
+                        <div class="card-body">
+                            <div class="agenda-item-info">
+                            <h2>Materiaal</h2>
+                                <div class='agenda-item-info prijs'>
+                            <span>Beschrijving</span> {{ mat.beschrijving }}
+                        </div>
+                         <div class='agenda-item-info prijs'>
+                            <span>Verdere info en boekingen</span> <a href="mailto:tim.vanmol@hotmail.com">tim.vanmol@hotmail.com</a>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

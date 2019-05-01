@@ -49,7 +49,7 @@
                   <div class="dropdown-menu">
                         <a class="dropdown-item" href="{% url 'begeleiding' %}">begeleiding</a>
                         <a class="dropdown-item" href="{% url 'groepen' %}">groepen</a>
-                        <a class="dropdown-item" href="#">over ons</a>
+                        <a class="dropdown-item" href="{% url 'overons' %}">over ons</a>
                         <a class="dropdown-item" href="{% url 'dash' %}">dashboard</a>
                   </div>
                 </li>
@@ -66,7 +66,7 @@
                     <div class='row'>
                         <div class='col-lg-4 col-md-6 col-sm-12'>
                             <ul class='left'>
-                                 <li><a href="http://127.0.0.1/italent/overons.php">Over ons</a></li>
+                                 <li><a href="{% url 'overons' %}">Over ons</a></li>
                                  <li><a href="/begeleiding">Begeleiding</a></li>
                                  <li><a href="/groepen">Groepen</a></li>
                                 <li><a href="/privacy">Privacybeleid</a></li>
@@ -80,19 +80,10 @@
                                 <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </div>                
-                        <div class='col-lg-4 col-md-12 right'>
-                            <h4>Nieuwsbrief</h4>
-                            <p>Laat hier jouw emailadres achter en blijf op de hoogte van het laatste nieuws, activiteiten en evenementen</p>
-                            <form>
-                                <div class="input-group">
-                                  <input type="email" class='form-control' name="nieuwsbrief-input" placeholder="jan.jansens@gmail.com">
-                                  <span class="input-group-prepend">
-                                    <button class="btn btn-primary" type="submit" id="nieuwsbrief-button">
-                                        <i class="fa fa-angle-right"></i>
-                                    </button>
-                                  </span>
-                                </div>
-                            </form>
+                        <div class='col-lg-4 col-md-12 right text-center'>
+                           <p> KSA DROESHOUT<br>
+                            Steenweg Op Vilvoorde 229<br>
+                               1745 Opwijk</p>
                         </div>   
                     </div>    
                 </div>

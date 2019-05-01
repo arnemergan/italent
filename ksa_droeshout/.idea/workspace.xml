@@ -2,41 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e883bebf-bab1-4d12-aae3-7c258b0a8597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/agenda/templates/pdf/agenda_ksa.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agenda/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inschrijven/resources.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijven/list_ingeschreven.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inschrijven/templates/leiding/leiding_update_btn.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/nieuws.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verhuur/templates/verhuur/lokaalfoto_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verhuur/templates/verhuur/tentfoto_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/templates/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/templates/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/templates/overons.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ksa_droeshout/roles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/nieuwsbrief.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/templates/agenda.html" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/templates/agenda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard_index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inschrijven/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inschrijven/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven/lid_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijven/lid_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijven_nieuw.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijven_nieuw.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/inschrijvinglid_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/inschrijvinglid_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/leden/leden_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/leden/leden_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inschrijven/templates/leden/lid_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/templates/leden/lid_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inschrijven/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inschrijven/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ksa_droeshout/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ksa_droeshout/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ksa_droeshout/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ksa_droeshout/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verhuur/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/verhuur/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/verhuur/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/verhuur/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/verhuur/templates/verhuur.html" beforeDir="false" afterPath="$PROJECT_DIR$/verhuur/templates/verhuur.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verhuur/templates/verhuur_dash.html" beforeDir="false" afterPath="$PROJECT_DIR$/verhuur/templates/verhuur_dash.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verhuur/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/verhuur/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,68 +42,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/verhuur/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ksa_droeshout/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur_dash.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="43" column="108" selection-start-line="43" selection-start-column="108" selection-end-line="43" selection-end-column="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur/lokaalfoto_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur/tentfoto_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="91" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-325">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -148,15 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/verhuur/templates/verhuur/tent_form.html" />
-        <option value="$PROJECT_DIR$/verhuur/templates/verhuur/lokaal_form.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/groep/groep_edit_btn.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/groep/groep_list.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/groep/groep_form.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/leiding/leiding_form.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/leiding/leiding_list.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/leiding/leiding_delete_btn.html" />
-        <option value="$PROJECT_DIR$/inschrijven/templates/leiding/leiding_confirm_delete.html" />
         <option value="$PROJECT_DIR$/inschrijven/signals.py" />
         <option value="$PROJECT_DIR$/inschrijven/apps.py" />
         <option value="$PROJECT_DIR$/inschrijven/templates/leiding/user_confirm_del.html" />
@@ -173,32 +86,41 @@
         <option value="$PROJECT_DIR$/agenda/utils.py" />
         <option value="$PROJECT_DIR$/agenda/templates/pdf/agenda_ksa.html" />
         <option value="$PROJECT_DIR$/agenda/views.py" />
-        <option value="$PROJECT_DIR$/verhuur/models.py" />
         <option value="$PROJECT_DIR$/index/templates/contact.html" />
         <option value="$PROJECT_DIR$/index/forms.py" />
-        <option value="$PROJECT_DIR$/index/views.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/inschrijven/templates/leiding/leiding_update_btn.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard_index.html" />
         <option value="$PROJECT_DIR$/inschrijven/tables.py" />
         <option value="$PROJECT_DIR$/inschrijven/templates/inschrijven/list_ingeschreven.html" />
         <option value="$PROJECT_DIR$/templates/base_dashboard.html" />
         <option value="$PROJECT_DIR$/inschrijven/templates/inschrijvinglid_list.html" />
-        <option value="$PROJECT_DIR$/inschrijven/models.py" />
         <option value="$PROJECT_DIR$/inschrijven/admin.py" />
         <option value="$PROJECT_DIR$/inschrijven/templates/inschrijven/inschrijving_form.html" />
-        <option value="$PROJECT_DIR$/inschrijven/forms.py" />
         <option value="$PROJECT_DIR$/inschrijven/templates/leden/lid_detail.html" />
-        <option value="$PROJECT_DIR$/ksa_droeshout/settings.py" />
-        <option value="$PROJECT_DIR$/inschrijven/views.py" />
         <option value="$PROJECT_DIR$/inschrijven/templates/leden/leden_list.html" />
         <option value="$PROJECT_DIR$/inschrijven/resources.py" />
         <option value="$PROJECT_DIR$/verhuur/templates/verhuur/lokaalfoto_list.html" />
-        <option value="$PROJECT_DIR$/ksa_droeshout/urls.py" />
         <option value="$PROJECT_DIR$/verhuur/views.py" />
-        <option value="$PROJECT_DIR$/verhuur/templates/verhuur_dash.html" />
         <option value="$PROJECT_DIR$/verhuur/templates/verhuur/tentfoto_list.html" />
+        <option value="$PROJECT_DIR$/inschrijven/forms.py" />
+        <option value="$PROJECT_DIR$/ksa_droeshout/roles.py" />
+        <option value="$PROJECT_DIR$/templates/403.html" />
+        <option value="$PROJECT_DIR$/templates/error.html" />
+        <option value="$PROJECT_DIR$/index/templates/403.html" />
+        <option value="$PROJECT_DIR$/verhuur/templates/verhuur_dash.html" />
+        <option value="$PROJECT_DIR$/ksa_droeshout/settings.py" />
+        <option value="$PROJECT_DIR$/inschrijven/views.py" />
+        <option value="$PROJECT_DIR$/index/templates/404.html" />
+        <option value="$PROJECT_DIR$/index/templates/500.html" />
+        <option value="$PROJECT_DIR$/verhuur/forms.py" />
+        <option value="$PROJECT_DIR$/verhuur/models.py" />
+        <option value="$PROJECT_DIR$/inschrijven/models.py" />
         <option value="$PROJECT_DIR$/verhuur/templates/verhuur.html" />
+        <option value="$PROJECT_DIR$/index/templates/overons.html" />
+        <option value="$PROJECT_DIR$/index/views.py" />
+        <option value="$PROJECT_DIR$/ksa_droeshout/urls.py" />
+        <option value="$PROJECT_DIR$/templates/nieuwsbrief.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -223,36 +145,7 @@
             <path>
               <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
               <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="inschrijven" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="inschrijven" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="verhuur" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="verhuur" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ksa_droeshout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ksa_droeshout" type="462c0819:PsiDirectoryNode" />
-              <item name="verhuur" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="verhuur" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -276,11 +169,11 @@
       <recent name="D:\School\italent\repo\italent\ksa_droeshout\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\School\italent\repo\italent\ksa_droeshout\index\templates" />
+      <recent name="D:\School\italent\repo\italent\ksa_droeshout\index" />
       <recent name="D:\School\italent\repo\italent\ksa_droeshout\media" />
       <recent name="D:\School\italent\repo\italent\ksa_droeshout\ksa_droeshout" />
       <recent name="D:\School\italent\repo\italent\ksa_droeshout\inschrijven\templates\leden" />
-      <recent name="D:\School\italent\repo\italent\ksa_droeshout\inschrijven" />
-      <recent name="D:\School\italent\repo\italent\ksa_droeshout\agenda\templates\agenda" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -386,17 +279,39 @@
       <workItem from="1556640202021" duration="8743000" />
       <workItem from="1556651458215" duration="105000" />
       <workItem from="1556654608302" duration="3292000" />
-      <workItem from="1556695404265" duration="14116000" />
+      <workItem from="1556695404265" duration="21528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251350000" />
+    <option name="totallyTimeSpent" value="258762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23087248" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80671144" weight="0.33286119" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798658" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" weight="0.39943343" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3295302" />
+    </layout>
+    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23087248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -418,125 +333,12 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.3295302" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22080536" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49530202" weight="0.33144477" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.504698" side_tool="true" weight="0.33144477" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.3295302" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/inschrijven/templates/leiding/user_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="41" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nieuws.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/signals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/migrations/0018_contact_geg_lid.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/templates/pdf/agenda_ksa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/templates/agenda.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="126" selection-start-line="20" selection-start-column="126" selection-end-line="20" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="46" lean-forward="true" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven/lid_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
@@ -551,44 +353,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/verhuur/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index/templates/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -703,30 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="146" selection-start-line="143" selection-end-line="146" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ksa_droeshout/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inschrijven/templates/leden/lid_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -751,16 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inschrijven/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1089">
-          <caret line="152" column="70" selection-start-line="152" selection-start-column="70" selection-end-line="152" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inschrijven/templates/inschrijven_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-53">
@@ -775,33 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ksa_droeshout/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/verhuur/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur_dash.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="43" column="108" selection-start-line="43" selection-start-column="108" selection-end-line="43" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur/tentfoto_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -809,10 +516,190 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/templates/leiding/leiding_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="29" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="186" column="37" selection-start-line="186" selection-start-column="37" selection-end-line="186" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksa_droeshout/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksa_droeshout/roles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur_dash.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/403.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/agenda/templates/agenda_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/agenda/templates/agenda.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="126" selection-start-line="20" selection-start-column="126" selection-end-line="20" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inschrijven/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/verhuur/templates/verhuur.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-325">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state relative-caret-position="151">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/overons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="16" column="794" selection-start-line="16" selection-start-column="794" selection-end-line="16" selection-end-column="794" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksa_droeshout/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="64" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nieuwsbrief.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="82" column="72" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nieuws.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/privacy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/verhuur/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/verhuur/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="107" selection-start-line="12" selection-start-column="107" selection-end-line="12" selection-end-column="107" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/verhuur/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

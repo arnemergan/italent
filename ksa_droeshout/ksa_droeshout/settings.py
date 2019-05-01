@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django_select2',
     'reportlab',
     'import_export',
+    'rolepermissions',
 ]
 
 MIDDLEWARE = [
@@ -155,4 +156,5 @@ EMAIL_HOST_PASSWORD = 'Leiding2019'
 EMAIL_USE_TLS = True
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+
 

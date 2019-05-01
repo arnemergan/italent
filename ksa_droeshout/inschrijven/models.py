@@ -82,6 +82,8 @@ class Leiding(models.Model):
     tel = models.IntegerField()
     foto = models.ImageField(upload_to='images/leiding')
 
+    def __str__(self):
+        return "%s %s" % (self.lid.voornaam, self.lid.achternaam)
 
 class Inschrijving(models.Model):
     agendaitemid = models.OneToOneField(AgendaItem, models.CASCADE)

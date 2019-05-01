@@ -1,17 +1,18 @@
 from django.db import models
 from agenda.models import Adres
-from django.contrib.auth.models import User
+from inschrijven.models import Leiding
 
 # Create your models here.
 class Lokaal(models.Model):
     adresid = models.ForeignKey(Adres,models.CASCADE)
 
     # verantwoordelijke verhuren lokaal
-    userid = models.ForeignKey(User,models.CASCADE)
+    userid = models.ForeignKey(Leiding,models.CASCADE)
     beschrijving = models.TextField(max_length=1000)
     prijsperpersoon = models.DecimalField(decimal_places=2,max_digits=5)
     prijs = models.DecimalField(decimal_places=2,max_digits=5)
     waarborg = models.DecimalField(decimal_places=2,max_digits=5)
+    contract = models.FileField(upload_to='contract')
 
     def __str__(self):
         return 'lokaal'
@@ -25,11 +26,13 @@ class Tent(models.Model):
     afmeting = models.CharField(max_length=20)
 
     #verantwoordelijke verhuren tenten
-    userid = models.ForeignKey(User,models.CASCADE)
+    userid = models.ForeignKey(Leiding,models.CASCADE)
     beschrijving = models.TextField(max_length=1000)
     prijswinst = models.DecimalField(decimal_places=2,max_digits=5)
     prijsnwinst = models.DecimalField(decimal_places=2,max_digits=5)
     waarborg = models.DecimalField(decimal_places=2,max_digits=5)
+    contract = models.FileField(upload_to='contract')
+
 
     def __str__(self):
         return self.type
@@ -40,7 +43,7 @@ class TentFoto(models.Model):
 
 class Materiaal(models.Model):
     #verantwoordelijke verhuren materiaal
-    userid = models.ForeignKey(User,models.CASCADE)
+    userid = models.ForeignKey(Leiding,models.CASCADE)
     beschrijving = models.TextField(max_length=500)
 
 class Weekend(models.Model):

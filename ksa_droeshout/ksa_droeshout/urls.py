@@ -15,6 +15,9 @@ from django.contrib.auth.models import User
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    #overons
+    path('overons/',index_views.OverView.as_view(),name='overons'),
+
     #contact
     path('contact/',index_views.ContactView.as_view(),name='contact'),
     #privacy

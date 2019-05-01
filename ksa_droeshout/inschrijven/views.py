@@ -8,8 +8,7 @@ from django.db.models import Q
 from django_tables2 import SingleTableView
 from .resources import LidResource
 from django.http import HttpResponse
-
-
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
 class InschrijvenView(generic.ListView):
@@ -91,11 +90,13 @@ class InschrijvenUpdateView(SuccessMessageMixin,generic.UpdateView):
         })
         return kwargs
 
-class InschrijvenDeleteView(SuccessMessageMixin,generic.DeleteView):
+class InschrijvenDeleteView(UserPassesTestMixin,SuccessMessageMixin,generic.DeleteView):
     model = Inschrijving
     success_url = '/inschrijven/list/'
     success_message = 'inschrijving is succesvol gedeleted'
 
+    def test_func(self):
+        return self.request.user.is_superuser
 
 class InschrijvingAllView(SingleTableView):
     template_name = 'inschrijven_list.html'
@@ -139,12 +140,15 @@ class LidView(generic.DetailView):
     def get_object(self):
         return Lid.objects.get(pk=self.kwargs['lid_id'])
 
-class LidDeleteView(generic.DeleteView):
+class LidDeleteView(UserPassesTestMixin,generic.DeleteView):
     model = Lid
     success_url = '/dashboard'
 
     def get_object(self):
         return Lid.objects.get(pk=self.kwargs['lid_id'])
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 def export_leden_csv(request):
     leden_resource = LidResource()
@@ -164,41 +168,59 @@ class GroepenView(generic.ListView):
     template_name = 'groepen.html'
     context_object_name = 'groep_list'
 
-class GroepUpdateView(SuccessMessageMixin,generic.UpdateView):
+class GroepUpdateView(UserPassesTestMixin,SuccessMessageMixin,generic.UpdateView):
     model = Groep
     form_class = FormGroepen
     success_url = '/dashboard/groepen'
     template_name = 'groep/groep_form.html'
 
-class GroepListView(SingleTableView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class GroepListView(UserPassesTestMixin,SingleTableView):
     model = Groep
     template_name = 'groep/groep_list.html'
     table_class = tables.GroepenTable
 
-class LeidingListView(SingleTableView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class LeidingListView(UserPassesTestMixin,SingleTableView):
     model = Leiding
     template_name = 'leiding/leiding_list.html'
     table_class = tables.LeidingTable
 
-class LeidingCreateView(SuccessMessageMixin,generic.CreateView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class LeidingCreateView(UserPassesTestMixin,SuccessMessageMixin,generic.CreateView):
     model = Leiding
     template_name = 'leiding/leiding_form.html'
     success_url = '/dashboard/leiding'
     success_message = 'leiding is gecreeerd'
     form_class = FormAddUser
 
-class LeidingUpdateView(SuccessMessageMixin,generic.UpdateView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class LeidingUpdateView(UserPassesTestMixin,SuccessMessageMixin,generic.UpdateView):
     model = Leiding
     template_name = 'leiding/leiding_form.html'
     success_url = '/dashboard/leiding'
-    success_message = 'leiding is gecreeerd'
+    success_message = 'leiding is geupdated'
     form_class = FormLeiding
 
-class LeidingDeleteView(SuccessMessageMixin,generic.DeleteView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class LeidingDeleteView(UserPassesTestMixin,SuccessMessageMixin,generic.DeleteView):
     model = Leiding
     success_url = '/dashboard/leiding/'
     template_name = 'leiding/leiding_confirm_delete.html'
     success_message = 'leiding is succesvol gedeleted'
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 # class UserCreateView(SuccessMessageMixin,generic.CreateView):
 #     model = User

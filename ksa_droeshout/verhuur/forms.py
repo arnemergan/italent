@@ -5,12 +5,12 @@ from verhuur import models
 class FormLokaal(forms.ModelForm):
     class Meta:
         model = models.Lokaal
-        fields = ['userid','adresid','beschrijving','prijs','prijsperpersoon','waarborg']
+        fields = ['userid','adresid','beschrijving','prijs','prijsperpersoon','waarborg','contract']
 
 class FormTent(forms.ModelForm):
     class Meta:
         model = models.Tent
-        fields = ['userid','type','prijsnwinst','prijswinst','beschrijving','afmeting','waarborg']
+        fields = ['userid','type','prijsnwinst','prijswinst','beschrijving','afmeting','waarborg','contract']
 
 class FormMateriaal(forms.ModelForm):
     class Meta:

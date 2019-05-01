@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Q
 from betterforms.multiform import MultiModelForm
 from django_select2.forms import Select2MultipleWidget
+from rolepermissions.roles import assign_role
 
 
 class FormSearchLid(forms.Form):
@@ -131,19 +132,8 @@ class FormInschrijvingAllow(MultiModelForm):
         'allow':FormAllowGroep,
     }
 
-    m2m_field = 'groep'
-    m2m_fields = []
-
     def save(self, commit=True):
         objects = super(FormInschrijvingAllow, self).save(commit=False)
-
-        if self.m2m_field:
-            self.m2m_fields = [self.m2m_field]
-
-        for field in self.m2m_fields:
-            m2mfield = getattr(objects, field)
-            for obj in self.cleaned_data.get(field):
-                m2mfield.add(obj)
 
         if commit:
             inschrijving = objects['inschrijving']
@@ -194,6 +184,7 @@ class FormAddUser(MultiModelForm):
             user = objects['user']
             leiding = objects['leiding']
             user.save()
+            assign_role(user, 'normal')
             leiding.userid = user
             leiding.save()
         return objects

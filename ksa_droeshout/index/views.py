@@ -9,6 +9,9 @@ from django.core.mail import send_mail
 class PrivacyView(generic.TemplateView):
     template_name = 'privacy.html'
 
+class OverView(generic.TemplateView):
+    template_name = 'overons.html'
+
 class ContactView(generic.FormView,SuccessMessageMixin):
     form_class = forms.contact
     success_url = '/contact'
